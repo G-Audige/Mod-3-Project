@@ -1,30 +1,29 @@
 import React from 'react';
 // Hooks
 import { useState, useEffect } from 'react';
+const id = process.env.REACT_APP_EDAMAM_APPLICATION_ID;
+const key = process.env.REACT_APP_EDAMAM_API_KEY;
 
 export default function RecipeSearchPage() {
   const [search, setSearch] = useState(null);
-  // const getSearch = async () => {
-  //   const url = 'https://omgvamp-hearthstone-v1.p.rapidapi.com/cardbacks';
-  //   const options = {
-  //     method: 'GET',
-  //     headers: {
-  //       'X-RapidAPI-Key': 'f40703f20dmsh86ac0d16e9c5d33p17af6bjsn62dcd48ef5a9',
-  //       'X-RapidAPI-Host': 'omgvamp-hearthstone-v1.p.rapidapi.com',
-  //     },
-  //   };
-
-  //   try {
-  //     const response = await fetch(url, options);
-  //     const result = await response.text();
-  //     console.log(result);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-  // useEffect(() => {
-  //   getSearch();
-  // }, [search]);
+  const find = 'egg';
+  const getSearch = async () => {
+    const url = `https://api.edamam.com/api/recipes/v2?type=public&q=${find}&app_id=${id}&app_key=${key}`;
+    const options = {
+      methods: 'GET',
+      headers: {},
+    };
+    try {
+      const response = await fetch(url, options);
+      const result = await response.json();
+      console.log(result);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  useEffect(() => {
+    getSearch();
+  }, [search]);
   return (
     <div>
       RecipeSearchPage

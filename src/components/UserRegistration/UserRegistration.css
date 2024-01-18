@@ -1,0 +1,77 @@
+:root {
+  --white: #ffffff;
+  --tan-1: #f6fbfb;
+  --tan-2: #dde3e7;
+  --tan-3: #d1dee2;
+  --tan-4: #aed1d3;
+  --blue: #007ff7;
+  --text-light: #968c84;
+  --text-dark: #615954;
+}
+.form-container {
+  padding: 3vmin;
+  background-color: var(--tan-1);
+  border: 0.1vmin solid var(--tan-3);
+  border-radius: 1vmin;
+}
+form {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1.25vmin;
+  color: var(--text-light);
+}
+
+label {
+  font-size: 2vmin;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  padding: 1vmin;
+  font-size: 2vmin;
+  border: 0.1vmin solid var(--tan-3);
+  border-radius: 0.5vmin;
+  color: var(--text-dark);
+  background-image: none !important; /* prevent lastpass */
+  outline: none;
+}
+input:focus {
+  border-color: var(--blue);
+}
+button,
+a.button {
+  margin: 1vmin;
+  padding: 1vmin;
+  color: var(--white);
+  background-color: var(--blue);
+  font-size: 2vmin;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  border: 0.1vmin solid var(--tan-2);
+  border-radius: 0.5vmin;
+  outline: none;
+  cursor: pointer;
+}
+
+button.btn-sm {
+  font-size: 1.5vmin;
+  padding: 0.6vmin 0.8vmin;
+}
+
+button.btn-xs {
+  font-size: 1vmin;
+  padding: 0.4vmin 0.5vmin;
+}
+
+button:disabled,
+form:invalid button[type='submit'] {
+  cursor: not-allowed;
+  background-color: var(--tan-4);
+}
+
+button[type='submit'] {
+  grid-column: span 2;
+  margin: 1vmin 0 0;
+}
