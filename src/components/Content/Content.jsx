@@ -28,7 +28,7 @@ export default function Content() {
         </Routes>
       ) : (
         <Routes>
-          <Route path='/user' element={<AuthPage />} />
+          <Route path='/user' element={<AuthPage setUser={setUser} />} />
         </Routes>
       )}
     </div>
