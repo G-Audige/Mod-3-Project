@@ -25,5 +25,13 @@ export default function RecipeSearchPage() {
   // useEffect(() => {
   //   getSearch();
   // }, [search]);
-  return <div>RecipeSearchPage</div>;
+  return (
+    <div>
+      RecipeSearchPage
+      <form>
+        <input type='text' />
+        <input type='submit' />
+      </form>
+    </div>
+  );
 }

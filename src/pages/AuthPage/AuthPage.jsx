@@ -3,7 +3,7 @@ import React from 'react';
 import UserRegistration from '../../components/UserRegistration/UserRegistration';
 import UserLogin from '../../components/UserLogin/UserLogin';
 
-function AuthPage() {
+export default function AuthPage() {
   return (
     <div>
       AuthPage
@@ -12,5 +12,3 @@ function AuthPage() {
     </div>
   );
 }
-
-export default AuthPage;

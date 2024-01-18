@@ -1,5 +1,8 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { getUser } from '../../utilities/users-service';
+// Hooks
+import { useState } from 'react';
 // Pages
 import AuthPage from '../../pages/AuthPage/AuthPage';
 import IngredientSearchPage from '../../pages/IngredientSearchPage/IngredientSearchPage';
@@ -8,7 +11,7 @@ import UserAccountPage from '../../pages/UserAccountPage/UserAccountPage';
 import MainPage from '../../pages/MainPage/MainPage';
 
 export default function Content() {
-  const user = null;
+  const [user, setUser] = useState(getUser());
   return (
     <div>
       <Routes>
@@ -18,7 +21,10 @@ export default function Content() {
       </Routes>
       {user ? (
         <Routes>
-          <Route path='/user' element={<UserAccountPage />} />
+          <Route
+            path='/user'
+            element={<UserAccountPage user={user} setUser={setUser} />}
+          />
         </Routes>
       ) : (
         <Routes>
