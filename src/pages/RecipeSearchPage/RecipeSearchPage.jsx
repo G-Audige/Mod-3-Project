@@ -3,15 +3,19 @@ import React from 'react';
 import RecipeForm from '../../components/RecipeForm/RecipeForm';
 import SearchResults from '../../components/SearchResults/SearchResults';
 import SearchButtons from '../../components/SearchButtons/SearchButtons';
+// Contexts
+import { APIContext } from '../../contexts/APIContext';
+import { SearchContext } from '../../contexts/SearchContexts';
 // Hooks
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 // .env Variables
 const id = process.env.REACT_APP_EDAMAM_APPLICATION_ID;
 const key = process.env.REACT_APP_EDAMAM_API_KEY;
 
 export default function RecipeSearchPage() {
-  const [search, setSearch] = useState('');
-  const [recipes, setRecipes] = useState(null);
+  const { search, setSearch } = useContext(SearchContext);
+  const { recipes, setRecipes } = useContext(APIContext);
+
   const getRecipes = async (searchterm) => {
     const url = `https://api.edamam.com/api/recipes/v2?type=public&q=${searchterm}&app_id=${id}&app_key=${key}`;
     const options = {

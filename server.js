@@ -18,12 +18,12 @@ app.use(require('./config/checkToken'));
 
 // ----------------------------[Routes]
 app.use('/api/users', require('./routes/api/users'));
-// app.use('/api/recipes', ensureLoggedIn, require('./routes/api/recipes'));
-// app.use(
-//   '/api/ingredients',
-//   ensureLoggedIn,
-//   require('./routes/api/ingredients')
-// );
+app.use('/api/recipes', ensureLoggedIn, require('./routes/api/recipes'));
+app.use(
+  '/api/ingredients',
+  ensureLoggedIn,
+  require('./routes/api/ingredients')
+);
 app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });

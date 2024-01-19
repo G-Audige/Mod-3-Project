@@ -1,17 +1,30 @@
 import './App.css';
 import React from 'react';
-import axios from 'axios';
 // Components
 import Content from './components/Content/Content';
 import Navbar from './components/Navbar/Navbar';
+// Contexts
+import { APIContext } from './contexts/APIContext';
+import { SearchContext } from './contexts/SearchContexts';
+import { UserContext } from './contexts/UserContext';
 // Hooks
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 function App() {
+  const [search, setSearch] = useState('');
+  const [index, setIndex] = useState(1);
+  const [recipes, setRecipes] = useState('');
+  const [user, setUser] = useState(null);
   return (
     <div className='App'>
-      <Navbar />
-      <Content />
+      <UserContext.Provider value={{ user, setUser }}>
+        <SearchContext.Provider value={{ search, setSearch, index, setIndex }}>
+          <APIContext.Provider value={{ recipes, setRecipes }}>
+            <Navbar />
+            <Content />
+          </APIContext.Provider>
+        </SearchContext.Provider>
+      </UserContext.Provider>
     </div>
   );
 }

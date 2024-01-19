@@ -1,0 +1,13 @@
+.recipes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.recipe {
+  border: solid gray;
+  margin: 5px;
+  width: 150px;
+}
+.recipe img {
+  width: 150px;
+}
