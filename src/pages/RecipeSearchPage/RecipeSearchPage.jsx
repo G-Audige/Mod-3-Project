@@ -1,18 +1,19 @@
 import React from 'react';
 // Components
-
+import RecipeForm from '../../components/RecipeForm/RecipeForm';
 import SearchResults from '../../components/SearchResults/SearchResults';
 import SearchButtons from '../../components/SearchButtons/SearchButtons';
 // Hooks
 import { useState, useEffect } from 'react';
+// .env Variables
 const id = process.env.REACT_APP_EDAMAM_APPLICATION_ID;
 const key = process.env.REACT_APP_EDAMAM_API_KEY;
 
 export default function RecipeSearchPage() {
   const [search, setSearch] = useState('egg');
   const [recipes, setRecipes] = useState(null);
-  const getRecipe = async () => {
-    const url = `https://api.edamam.com/api/recipes/v2?type=public&q=${search}&app_id=${id}&app_key=${key}`;
+  const getRecipes = async (searchterm) => {
+    const url = `https://api.edamam.com/api/recipes/v2?type=public&q=${searchterm}&app_id=${id}&app_key=${key}`;
     const options = {
       methods: 'GET',
       headers: {},
@@ -22,12 +23,16 @@ export default function RecipeSearchPage() {
       const result = await response.json();
       setRecipes(result);
       console.log(result);
+      console.log(searchterm);
     } catch (error) {
       console.error(error);
     }
   };
   useEffect(() => {
-    getRecipe();
+    if (search) {
+      console.log('Search on useEffect:', search);
+      getRecipes(search);
+    }
   }, [search]);
 
   const position = {
@@ -37,10 +42,7 @@ export default function RecipeSearchPage() {
   return (
     <div>
       RecipeSearchPage
-      <form>
-        <input type='text' />
-        <input type='submit' />
-      </form>
+      <RecipeForm getRecipe={getRecipes} setSearch={setSearch} />
       <SearchButtons position={position.top} />
       <SearchResults items={recipes} />
       <SearchButtons position={position.bottom} />
