@@ -10,7 +10,7 @@ const id = process.env.REACT_APP_EDAMAM_APPLICATION_ID;
 const key = process.env.REACT_APP_EDAMAM_API_KEY;
 
 export default function RecipeSearchPage() {
-  const [search, setSearch] = useState('egg');
+  const [search, setSearch] = useState('');
   const [recipes, setRecipes] = useState(null);
   const getRecipes = async (searchterm) => {
     const url = `https://api.edamam.com/api/recipes/v2?type=public&q=${searchterm}&app_id=${id}&app_key=${key}`;
@@ -43,9 +43,15 @@ export default function RecipeSearchPage() {
     <div>
       RecipeSearchPage
       <RecipeForm getRecipe={getRecipes} setSearch={setSearch} />
-      <SearchButtons position={position.top} />
-      <SearchResults items={recipes} />
-      <SearchButtons position={position.bottom} />
+      {search ? (
+        <div>
+          <SearchButtons position={position.top} />
+          <SearchResults items={recipes} />
+          <SearchButtons position={position.bottom} />
+        </div>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 }
