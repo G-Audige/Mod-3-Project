@@ -13,7 +13,7 @@ const id = process.env.REACT_APP_EDAMAM_APPLICATION_ID;
 const key = process.env.REACT_APP_EDAMAM_API_KEY;
 
 export default function RecipeSearchPage() {
-  const { search, setSearch } = useContext(SearchContext);
+  const { search, setSearch, index } = useContext(SearchContext);
   const { recipes, setRecipes } = useContext(APIContext);
 
   const getRecipes = async (searchterm) => {

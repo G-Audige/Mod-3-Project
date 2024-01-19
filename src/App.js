@@ -12,7 +12,7 @@ import { useState } from 'react';
 
 function App() {
   const [search, setSearch] = useState('');
-  const [index, setIndex] = useState(1);
+  const [index, setIndex] = useState(0);
   const [recipes, setRecipes] = useState('');
   const [user, setUser] = useState(null);
   return (
