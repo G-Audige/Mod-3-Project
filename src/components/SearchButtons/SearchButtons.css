@@ -1,0 +1,63 @@
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#upper-buttons {
+  background-color: #97c8eb;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-top: 10px;
+}
+#top-previous-btn {
+  background-color: transparent;
+  border-color: transparent;
+  border-right: 1px solid #eef6fc;
+  border-top-left-radius: 10px;
+  height: 30px;
+  width: 60px;
+}
+#top-previous-btn:hover {
+  background-color: #eef6fc;
+}
+#top-next-btn {
+  background-color: transparent;
+  border-color: transparent;
+  border-left: 1px solid #eef6fc;
+  border-top-right-radius: 10px;
+  height: 30px;
+  width: 60px;
+}
+#top-next-btn:hover {
+  background-color: #eef6fc;
+}
+
+#lower-buttons {
+  background-color: #97c8eb;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-bottom: 10px;
+}
+#bottom-previous-btn {
+  background-color: transparent;
+  border-color: transparent;
+  border-right: 1px solid #eef6fc;
+  border-bottom-left-radius: 10px;
+  height: 30px;
+  width: 60px;
+}
+#bottom-previous-btn:hover {
+  background-color: #eef6fc;
+}
+#bottom-next-btn {
+  background-color: transparent;
+  border-color: transparent;
+  border-left: 1px solid #eef6fc;
+  border-bottom-right-radius: 10px;
+  height: 30px;
+  width: 60px;
+}
+#bottom-next-btn:hover {
+  background-color: #eef6fc;
+}

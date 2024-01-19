@@ -8,6 +8,7 @@ const logger = require('morgan');
 const cors = require('cors');
 const port = 3001;
 const app = express();
+const ensureLoggedIn = require('./config/ensureLoggedIn');
 // ----------------------------[Middleware]
 app.use(logger('dev'));
 app.use(express.json());
@@ -17,6 +18,12 @@ app.use(require('./config/checkToken'));
 
 // ----------------------------[Routes]
 app.use('/api/users', require('./routes/api/users'));
+// app.use('/api/recipes', ensureLoggedIn, require('./routes/api/recipes'));
+// app.use(
+//   '/api/ingredients',
+//   ensureLoggedIn,
+//   require('./routes/api/ingredients')
+// );
 app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
