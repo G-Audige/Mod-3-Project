@@ -1,6 +1,7 @@
 const Recipe = require('../../models/recipe');
 
 module.exports = {
+  addToBook,
   book,
 };
 
@@ -12,4 +13,10 @@ async function book(req, res) {
     res.status(400).json({ msg: e.message });
   }
 }
-async function addToBook(req, res) {}
+async function addToBook(req, res) {
+  try {
+    const book = await Recipe.getBook(req.user_id);
+  } catch {
+    res.status(400).json({ msg: e.message });
+  }
+}

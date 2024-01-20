@@ -1,13 +1,14 @@
 import React from 'react';
 // Components
 import UserNav from '../../components/UserNav/UserNav';
-import UserSections from '../../components/UserSections/UserSections';
+import UserInfo from '../../components/UserInfo/UserInfo';
 
 export default function UserAccountPage() {
   return (
     <div>
-      UserAccountPage
+      <h1>User Account Page</h1>
       <UserNav />
+      <UserInfo />
     </div>
   );
 }
