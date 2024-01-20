@@ -9,12 +9,13 @@ import { SearchContext } from './contexts/SearchContexts';
 import { UserContext } from './contexts/UserContext';
 // Hooks
 import { useState } from 'react';
+import { getUser } from './utilities/users-service';
 
 function App() {
   const [search, setSearch] = useState('');
   const [index, setIndex] = useState(0);
   const [recipes, setRecipes] = useState('');
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(getUser());
   return (
     <div className='App'>
       <UserContext.Provider value={{ user, setUser }}>

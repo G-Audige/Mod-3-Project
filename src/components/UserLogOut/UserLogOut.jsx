@@ -1,7 +1,12 @@
 import styles from './UserLogOut.module.css';
 import { logOut } from '../../utilities/users-service';
+// Contexts
+import { UserContext } from '../../contexts/UserContext';
+// Hooks
+import { useContext } from 'react';
 
-export default function UserLogOut({ user, setUser }) {
+export default function UserLogOut() {
+  const { user, setUser } = useContext(UserContext);
   function handleLogOut() {
     logOut();
     setUser(null);

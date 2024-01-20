@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { getUser } from '../../utilities/users-service';
+// Contexts
+import { UserContext } from '../../contexts/UserContext';
 // Hooks
 import { useState } from 'react';
 // Pages
@@ -11,7 +12,7 @@ import UserAccountPage from '../../pages/UserAccountPage/UserAccountPage';
 import MainPage from '../../pages/MainPage/MainPage';
 
 export default function Content() {
-  const [user, setUser] = useState(getUser());
+  const { user, setUser } = useContext(UserContext);
   return (
     <div>
       <Routes>
