@@ -11,6 +11,7 @@ export default function SearchResults() {
   const { search, index, setIndex } = useContext(SearchContext);
   const handleClick = (i) => {
     setIndex(i);
+    console.log(recipes.hits[i]);
   };
 
   const loaded = () => {
@@ -30,7 +31,19 @@ export default function SearchResults() {
             })}
           </div>
           {index ? (
-            <div className='selected-recipe'>{data[index].recipe.label}</div>
+            <div className='selected-recipe'>
+              <h2>{data[index].recipe.label}</h2>
+              <img src={data[index].recipe.image} />
+              <p>Calories: {Math.round(data[index].recipe.calories)}</p>
+              <div className='ingredients'>
+                <ul>
+                  {data[index].recipe.ingredientLines.map((ing) => {
+                    return <li>{ing}</li>;
+                  })}
+                </ul>
+              </div>
+              <a href={data[index].recipe.url}>Link to recipe</a>
+            </div>
           ) : (
             <div style={{ display: 'none' }}></div>
           )}

@@ -11,3 +11,9 @@
 .recipe img {
   width: 150px;
 }
+ul {
+  text-align: left;
+}
+.selected-recipe {
+  text-align: left;
+}

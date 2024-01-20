@@ -1,3 +1,4 @@
+import './RecipeSearchPage.css';
 import React from 'react';
 // Components
 import RecipeForm from '../../components/RecipeForm/RecipeForm';
@@ -44,7 +45,7 @@ export default function RecipeSearchPage() {
     bottom: 1,
   };
   return (
-    <div>
+    <div className='recipe-search-page'>
       RecipeSearchPage
       <RecipeForm getRecipe={getRecipes} setSearch={setSearch} />
       {search ? (
