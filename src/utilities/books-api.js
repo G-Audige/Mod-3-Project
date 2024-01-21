@@ -3,6 +3,7 @@ import { sendRequest } from './send-request';
 const Base_URL = '/api/books';
 
 export function getBook() {
+  // console.log('Books-api getBook');
   return sendRequest(`${Base_URL}`);
 }
 export function addRecipeToBook(recipeData) {
