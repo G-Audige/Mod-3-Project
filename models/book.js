@@ -23,14 +23,18 @@ const bookSchema = new Schema(
 );
 
 bookSchema.statics.getBook = function (userId) {
-  return this.findOnaAndUpdate(
+  console.log('Get book');
+  console.log('User ID:', userId);
+  const book = this;
+  return book.findOneAndUpdate(
     { user: userId },
     { user: userId },
     { upsert: true, new: true }
   );
 };
-
 bookSchema.methods.addRecipeToBook = async function (recipeId, recipeData) {
+  console.log('Add recipe to book model');
+  // console.log(recipeData);
   const book = this;
   const page = book.pages.find((page) => {
     page.items._id.equals(recipeId);

@@ -3,18 +3,21 @@ import * as booksAPI from '../../utilities/books-api';
 
 export default function RecipeInfo({ recipe, recipeID }) {
   let recipeData = {
-    name: recipe.recipe.label,
+    label: recipe.recipe.label,
     calories: recipe.recipe.calories,
     recipeId: recipeID,
     link: recipe.recipe.url,
     image: recipe.recipe.image,
     ingredients: recipe.recipe.ingredientLines,
     cuisineType: recipe.recipe.cuisineType,
-    dishType: recipe.recipe.dihType,
+    dishType: recipe.recipe.dishType,
   };
   const submitRecipe = async () => {
     // preventDefault();
     try {
+      console.log('Submit data');
+      console.log(recipeData);
+      console.log(recipeID);
       const recipeInfo = await booksAPI.addRecipeToBook(recipeData);
       console.log(recipeInfo);
     } catch (e) {

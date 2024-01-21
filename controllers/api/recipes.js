@@ -9,13 +9,13 @@ async function recipes(req, res) {
   try {
     const book = await Recipe.getBook(req.user._id);
     res.status(200).json(book);
-  } catch {
+  } catch (e) {
     res.status(400).json({ msg: e.message });
   }
 }
 async function findRecipe(req, res) {
   try {
-  } catch {
+  } catch (e) {
     res.status(400).json({ msg: e.message });
   }
 }

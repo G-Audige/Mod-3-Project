@@ -1,8 +1,8 @@
 const Schema = require('mongoose').Schema;
 const recipeSchema = new Schema(
   {
-    name: { type: String },
-    calories: { type: String },
+    label: { type: String },
+    calories: { type: Number },
     recipeId: { type: String },
     link: { type: String },
     image: { type: String },
