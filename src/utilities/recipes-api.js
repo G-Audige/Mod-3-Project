@@ -2,10 +2,10 @@ import { sendRequest } from './send-request';
 
 const BASE_URL = '/api/recipes';
 
-export function getBook() {
-  return sendRequest(`${BASE_URL}/book`);
+export function getAll() {
+  return sendRequest(`${BASE_URL}`);
 }
 
-export function addRecipeToBook(recipeID) {
-  return sendRequest(`${BASE_URL}/book/page/${recipeID}`, 'POST');
+export function getById(recipeID) {
+  return sendRequest(`${BASE_URL}/${recipeID}`);
 }

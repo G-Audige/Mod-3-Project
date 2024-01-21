@@ -3,6 +3,7 @@ const Recipe = require('../../models/recipe');
 module.exports = {
   addToBook,
   book,
+  removeRecipeFromBook,
 };
 
 async function book(req, res) {
@@ -25,7 +26,8 @@ async function addToBook(req, res) {
 async function removeRecipeFromBook(req, res) {
   try {
     const book = await Recipe.getBook(req.user_id);
-    await status(200).json(book);
+    await book.removeRecipeFromBook(req.params.id);
+    res.status(200).json(book);
   } catch {
     res.status(400).json({ msg: e.message });
   }
