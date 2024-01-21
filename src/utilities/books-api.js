@@ -1,6 +1,6 @@
 import { sendRequest } from './send-request';
 
-const Base_URL = '/api/book';
+const Base_URL = '/api/books';
 
 export function getBook() {
   return sendRequest(`${Base_URL}`);

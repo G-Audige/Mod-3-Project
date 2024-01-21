@@ -18,6 +18,7 @@ async function addToBook(req, res) {
   try {
     const book = await Recipe.getBook(req.user_id);
     await book.addRecipeToBook(req.params.id, req.body);
+    console.log('Add to book');
     res.status(200).json(book);
   } catch {
     res.status(400).json({ msg: e.message });
