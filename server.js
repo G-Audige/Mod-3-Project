@@ -18,6 +18,7 @@ app.use(require('./config/checkToken'));
 
 // ----------------------------[Routes]
 app.use('/api/users', require('./routes/api/users'));
+app.use('/api/books', ensureLoggedIn, require('./routes/api/books'));
 app.use('/api/recipes', ensureLoggedIn, require('./routes/api/recipes'));
 app.use(
   '/api/ingredients',

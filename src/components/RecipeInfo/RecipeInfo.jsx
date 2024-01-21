@@ -9,8 +9,8 @@ export default function RecipeInfo({ recipe, recipeID }) {
     link: recipe.recipe.url,
     image: recipe.recipe.image,
     ingredients: recipe.recipe.ingredientLines,
-    cuisineType: '',
-    dishType: '',
+    cuisineType: recipe.recipe.cuisineType,
+    dishType: recipe.recipe.dihType,
   };
   const submitRecipe = async () => {
     // preventDefault();
