@@ -5,7 +5,7 @@ const recipeSchema = require('./recipeSchema');
 const pageSchema = new Schema(
   {
     name: { type: String },
-    item: recipeSchema,
+    items: [recipeSchema],
   },
   {
     timestamps: true,
@@ -32,22 +32,28 @@ bookSchema.statics.getBook = function (userId) {
     { upsert: true, new: true }
   );
 };
-bookSchema.methods.addRecipeToBook = async function (recipeId, recipeData) {
+bookSchema.methods.addRecipeToBook = async function (recipeData) {
   console.log('Add recipe to book model');
-  // console.log(recipeData);
+  // console.log(recipeData.recipeId);
   const book = this;
+  // console.log(book);
   const page = book.pages.find((page) => {
-    page.items._id.equals(recipeId);
+    return page.items.recipeId.equals(recipeData.recipeId);
   });
   if (!page) {
-    const recipe = mongoose.model('Recipe', recipeData);
-    book.pages.push({ recipe });
+    console.log('Adding recipe to book');
+    // console.log(recipeData);
+    const recipe = mongoose.model('Recipe', recipeSchema)(recipeData);
+    console.log(recipe);
+    book.pages.push({ items: recipeData });
+  } else {
+    console.log('This recipe is already in the book.');
   }
   return book.save();
 };
 bookSchema.methods.removeRecipeFromBook = async function (recipeId) {
   const book = this;
-  book.findOneAndRemove({ recipeId: recipeId });
+  book.pages.findOneAndRemove({ recipeId: recipeId });
   return book.save();
 };
 
