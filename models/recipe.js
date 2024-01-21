@@ -5,7 +5,7 @@ const recipeSchema = new Schema(
   {
     name: { type: String },
     calories: { type: String },
-    recipeId: { type: String, unique: true },
+    recipeId: { type: String },
     link: { type: String },
     image: { type: String },
     ingredients: { type: Array },
@@ -19,6 +19,7 @@ const recipeSchema = new Schema(
 );
 const pageSchema = new Schema(
   {
+    name: { type: String },
     item: recipeSchema,
   },
   {
@@ -28,6 +29,7 @@ const pageSchema = new Schema(
 const bookSchema = new Schema(
   {
     user: { type: Schema.Types.ObjectId, ref: 'User' },
+    name: { type: String },
     pages: [pageSchema],
   },
   {
@@ -43,17 +45,21 @@ bookSchema.statics.getBook = function (userId) {
   );
 };
 
-bookSchema.methods.addRecipeToBook = async function (recipeId) {
+bookSchema.methods.addRecipeToBook = async function (recipeId, recipeData) {
   const book = this;
   const page = book.pages.find((page) => {
-    page.item._id.equals(recipeId);
+    page.items._id.equals(recipeId);
   });
-  const recipe = await mongoose.model('Recipe').finfById(recipeId);
-  book.pages.push({ recipe });
+  if (!page) {
+    const recipe = mongoose.model('Recipe', recipeData);
+    book.pages.push({ recipe });
+  }
   return book.save();
 };
 bookSchema.methods.removeRecipeFromBook = async function (recipeId) {
-  return this.findOneAndRemove({ recipeId: recipeId });
+  const book = this;
+  book.findOneAndRemove({ recipeId: recipeId });
+  return book.save();
 };
 
 module.exports = mongoose.model('Book', bookSchema);

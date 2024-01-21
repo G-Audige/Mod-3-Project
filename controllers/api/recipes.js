@@ -17,7 +17,7 @@ async function book(req, res) {
 async function addToBook(req, res) {
   try {
     const book = await Recipe.getBook(req.user_id);
-    await book.addRecipeToBook(req.params.id);
+    await book.addRecipeToBook(req.body);
     res.status(200).json(book);
   } catch {
     res.status(400).json({ msg: e.message });
