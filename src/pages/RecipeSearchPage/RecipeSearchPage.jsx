@@ -8,13 +8,13 @@ import SearchButtons from '../../components/SearchButtons/SearchButtons';
 import { APIContext } from '../../contexts/APIContext';
 import { SearchContext } from '../../contexts/SearchContexts';
 // Hooks
-import { useState, useEffect, useContext } from 'react';
+import { useEffect, useContext } from 'react';
 // .env Variables
 const id = process.env.REACT_APP_EDAMAM_APPLICATION_ID;
 const key = process.env.REACT_APP_EDAMAM_API_KEY;
 
 export default function RecipeSearchPage() {
-  const { search, setSearch, index } = useContext(SearchContext);
+  const { search, setSearch } = useContext(SearchContext);
   const { recipes, setRecipes } = useContext(APIContext);
 
   const getRecipes = async (searchterm) => {
@@ -38,6 +38,7 @@ export default function RecipeSearchPage() {
       console.log('Search on useEffect:', search);
       getRecipes(search);
     }
+    // eslint-disable-next-line
   }, [search]);
 
   const position = {

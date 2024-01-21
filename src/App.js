@@ -16,11 +16,14 @@ function App() {
   const [index, setIndex] = useState(0);
   const [recipes, setRecipes] = useState('');
   const [user, setUser] = useState(getUser());
+  const [recipeID, setRecipeID] = useState('');
   return (
     <div className='App'>
       <UserContext.Provider value={{ user, setUser }}>
         <SearchContext.Provider value={{ search, setSearch, index, setIndex }}>
-          <APIContext.Provider value={{ recipes, setRecipes }}>
+          <APIContext.Provider
+            value={{ recipes, setRecipes, recipeID, setRecipeID }}
+          >
             <Navbar />
             <Content />
           </APIContext.Provider>

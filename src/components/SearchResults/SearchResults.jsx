@@ -6,14 +6,13 @@ import RecipeInfo from '../RecipeInfo/RecipeInfo';
 import { APIContext } from '../../contexts/APIContext';
 import { SearchContext } from '../../contexts/SearchContexts';
 // Hooks
-import { useContext, useState, useEffect } from 'react';
+import { useContext, useState } from 'react';
 // .env Variables
-const id = process.env.REACT_APP_EDAMAM_APPLICATION_ID;
-const key = process.env.REACT_APP_EDAMAM_API_KEY;
+// const id = process.env.REACT_APP_EDAMAM_APPLICATION_ID;
+// const key = process.env.REACT_APP_EDAMAM_API_KEY;
 
 export default function SearchResults() {
   const { recipes } = useContext(APIContext);
-  const [dish, setDish] = useState('');
   const [recipeID, setRecipeID] = useState('');
   const { search, index, setIndex } = useContext(SearchContext);
   const handleClick = (i) => {
@@ -52,7 +51,7 @@ export default function SearchResults() {
             {data.map((rec, i) => {
               return (
                 <div className='recipe' key={i} onClick={() => handleClick(i)}>
-                  <img src={rec.recipe.image} />
+                  <img src={rec.recipe.image} alt={rec.recipe.label} />
                   <p>{rec.recipe.label}</p>
                   <p>{i + 1}</p>
                 </div>

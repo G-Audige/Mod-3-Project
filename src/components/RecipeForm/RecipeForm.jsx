@@ -1,6 +1,6 @@
 import React from 'react';
 // Hooks
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 function RecipeForm({ getRecipes, setSearch }) {
   const [formData, setFormData] = useState({
