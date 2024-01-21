@@ -19,7 +19,7 @@ export default function SearchResults() {
   const handleClick = (i) => {
     setIndex(i);
     const sections = recipes.hits[i].recipe.uri.split('_');
-    // setRecipeID(sections[1]);
+    setRecipeID(sections[1]);
     console.log('ID:', sections[1]);
     console.log(recipes.hits[i]);
   };
@@ -61,7 +61,7 @@ export default function SearchResults() {
           </div>
           {index ? (
             <div className='selected-recipe'>
-              <RecipeInfo recipe={data[index]} />
+              <RecipeInfo recipe={data[index]} recipeID={recipeID} />
             </div>
           ) : (
             <div style={{ display: 'none' }}></div>

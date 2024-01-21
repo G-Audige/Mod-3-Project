@@ -1,7 +1,22 @@
 import React from 'react';
+import * as recipesAPI from '../../utilities/recipes-api';
 
-export default function RecipeInfo({ recipe }) {
-  const submitRecipe = () => {};
+export default function RecipeInfo({ recipe, recipeID }) {
+  let recipeData = {
+    name: recipe.recipe.label,
+    calories: recipe.recipe.calories,
+    recipeId: recipeID,
+    link: recipe.recipe.url,
+    image: recipe.recipe.image,
+    ingredients: recipe.recipe.ingredientLines,
+    cuisineType: '',
+    dishType: '',
+  };
+  const submitRecipe = () => {
+    // e.preventDefault();
+    try {
+    } catch {}
+  };
   return (
     <div>
       <h2>{recipe.recipe.label}</h2>
