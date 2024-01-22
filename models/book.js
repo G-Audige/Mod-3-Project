@@ -42,7 +42,7 @@ bookSchema.methods.removeRecipeFromBook = async function (pageId) {
   const book = this;
   console.log(book.pages[1]._id);
   console.log('Page Id', pageId);
-  book.pages.findOneAndDelete({ _id: pageId });
+  book.pages.findOneAndUpdate({ _id: pageId });
   return book.save();
 };
 

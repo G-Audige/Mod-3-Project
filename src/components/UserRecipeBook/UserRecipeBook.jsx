@@ -1,3 +1,4 @@
+import './UserRecipeBook.css';
 import React from 'react';
 import * as booksAPI from '../../utilities/books-api';
 import { useEffect, useState } from 'react';
@@ -5,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 export default function UserRecipeBook() {
   const [book, setBook] = useState(null);
-  const [index, setIndex] = useState(1);
+  const [index, setIndex] = useState(0);
 
   useEffect(function () {
     async function getBoo() {
@@ -51,14 +52,36 @@ export default function UserRecipeBook() {
       You have {book?.pages.length} recipes in your book.
       {book?.pages[index]?.items[0]?.label ? (
         <div>
-          <button onClick={() => shiftIndex.decrement()}>Previous</button>
-          <button onClick={() => shiftIndex.increment()}>Next</button>
+          <div>
+            <button onClick={() => shiftIndex.decrement()}>Previous</button>
+            {index + 1} of {book?.pages.length}
+            <button onClick={() => shiftIndex.increment()}>Next</button>
+          </div>
 
           <h3>{book.pages[index].items[0].label}</h3>
-          <img
-            src={book.pages[index].items[0].image}
-            alt={book.pages[index].items[0].label}
-          />
+          <div className='recipe-book-info'>
+            <img
+              src={book.pages[index].items[0].image}
+              alt={book.pages[index].items[0].label}
+            />
+            <div>
+              <div>
+                <p>
+                  <strong>Calories:</strong>{' '}
+                  {Math.round(book.pages[index].items[0].calories)}
+                </p>
+              </div>
+              <div>
+                <p>
+                  <strong>Ingredients</strong>
+                </p>
+                {book.pages[index].items[0].ingredients.map((ingr) => {
+                  return <p>{ingr}</p>;
+                })}
+              </div>
+            </div>
+          </div>
+
           <br />
           <button onClick={() => deleteRecipe()}>Delete Recipe</button>
         </div>

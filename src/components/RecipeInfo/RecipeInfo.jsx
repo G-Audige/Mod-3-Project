@@ -38,6 +38,7 @@ export default function RecipeInfo({ recipe, recipeID }) {
     } catch (e) {
       console.log('Error');
     }
+    prompt(recipe.recipe.label, 'has been added to your book.');
   };
   const closeView = () => {
     setIndex(null);
