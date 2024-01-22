@@ -2,11 +2,6 @@ import React from 'react';
 import './NutritionResults.css';
 
 export default function NutritionResults({ food, search }) {
-  const loadCautions = () => {
-    food.cautions.map((label) => {
-      return <p>{label}</p>;
-    });
-  };
   const loaded = () => {
     if (food) {
       return (
@@ -17,14 +12,18 @@ export default function NutritionResults({ food, search }) {
           </p>
           <div>
             <h3>Cautions</h3>
-            {food.cautions.length === 0 ? <p>None</p> : loadCautions()}
+            {/* {food.cautions.length === 0 ? <p>None</p> : {}} */}
+            {food.cautions.map((label) => {
+              console.log(label);
+              return <p>{label[0] + label.slice(1).toLowerCase()}</p>;
+            })}
           </div>
           <div className='facts'>
             <div>
               <h3>Diet Labels</h3>
               <ul>
                 {food.dietLabels.map((label) => {
-                  return <li>{label}</li>;
+                  return <li>{label[0] + label.slice(1).toLowerCase()}</li>;
                 })}
               </ul>
             </div>
@@ -32,7 +31,7 @@ export default function NutritionResults({ food, search }) {
               <h3>Health Labels</h3>
               <ul>
                 {food.healthLabels.map((label) => {
-                  return <li>{label}</li>;
+                  return <li>{label[0] + label.slice(1).toLowerCase()}</li>;
                 })}
               </ul>
             </div>

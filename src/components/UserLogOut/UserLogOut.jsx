@@ -15,7 +15,7 @@ export default function UserLogOut() {
   return (
     <div className={styles.UserLogOut}>
       <button className='btn-sm' onClick={handleLogOut}>
-        LOG OUT
+        Log Out
       </button>
     </div>
   );

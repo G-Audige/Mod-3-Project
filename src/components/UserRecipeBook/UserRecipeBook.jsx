@@ -21,28 +21,15 @@ export default function UserRecipeBook() {
     getBoo();
     // eslint-disable-next-line
   }, []);
-  const deleteRecipe = async () => {
-    try {
-      // eslint-disable-next-line
-      const deleteRecipe = await booksAPI.deleteRecipeFromBook(
-        book.pages[index]._id
-      );
-      if (index > 0) {
-        setIndex(index--);
-      }
-    } catch (e) {
-      console.log('Error');
-    }
-  };
   const shiftIndex = {
     decrement: function () {
       if (index > 0) {
-        setIndex(index - 1);
+        setIndex((index) => index - 1);
       }
     },
     increment: function () {
       if (index < book?.pages.length - 1) {
-        setIndex(index + 1);
+        setIndex((index) => index + 1);
       }
     },
   };
@@ -71,7 +58,7 @@ export default function UserRecipeBook() {
                   {Math.round(book.pages[index].items[0].calories)}
                 </p>
               </div>
-              <div>
+              <div className='ingredients'>
                 <p>
                   <strong>Ingredients</strong>
                 </p>
@@ -81,9 +68,6 @@ export default function UserRecipeBook() {
               </div>
             </div>
           </div>
-
-          <br />
-          <button onClick={() => deleteRecipe()}>Delete Recipe</button>
         </div>
       ) : (
         <div>

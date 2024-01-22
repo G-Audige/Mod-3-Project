@@ -1,4 +1,9 @@
 .facts {
   display: flex;
   justify-content: space-evenly;
+  background-color: white;
+  text-align: left;
+}
+.facts h3 {
+  margin-left: 20px;
 }

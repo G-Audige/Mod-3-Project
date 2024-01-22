@@ -1,6 +1,5 @@
 import React from 'react';
 import './NutritionForm.css';
-import { IoSearch } from 'react-icons/io5';
 // Hooks
 import { useState } from 'react';
 
@@ -33,7 +32,7 @@ export default function NutritionForm({ setSearch }) {
           className='searchbar'
         />
         <button type='submit' className='searchButton'>
-          <IoSearch />
+          Search
         </button>
       </form>
     </div>

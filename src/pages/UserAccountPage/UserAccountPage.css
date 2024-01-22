@@ -3,11 +3,10 @@
 }
 .user-nav {
   width: 200px;
-  height: 300px;
-  border: solid gray;
+  max-height: 100vh;
+  border-right: 1px solid brown;
 }
 .user-info {
-  border: solid gray;
   width: 100%;
 }
 .user-nav div {
