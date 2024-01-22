@@ -1,7 +1,11 @@
 import React from 'react';
 import * as booksAPI from '../../utilities/books-api';
+// Contexts
+import { SearchContext } from '../../contexts/SearchContexts';
+import { useContext } from 'react';
 
 export default function RecipeInfo({ recipe, recipeID }) {
+  const { index, setIndex } = useContext(SearchContext);
   let recipeData = {
     label: recipe.recipe.label,
     calories: recipe.recipe.calories,
@@ -24,9 +28,13 @@ export default function RecipeInfo({ recipe, recipeID }) {
       console.log('Error');
     }
   };
+  const closeView = () => {
+    setIndex(null);
+  };
   return (
     <div>
       <h2>{recipe.recipe.label}</h2>
+      <button onClick={() => closeView()}>X</button>
       <img src={recipe.recipe.image} alt={recipe.recipe.label} />
       <p>Calories: {Math.round(recipe.recipe.calories)}</p>
       <div className='ingredients'>

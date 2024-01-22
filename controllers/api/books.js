@@ -9,6 +9,7 @@ module.exports = {
 async function book(req, res) {
   try {
     const book = await Recipe.getBook(req.user._id);
+    console.log('Get book controller:');
     res.status(200).json(book);
   } catch (e) {
     res.status(400).json({ msg: e.message });

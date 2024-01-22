@@ -4,13 +4,26 @@ import { useEffect, useState } from 'react';
 
 export default function UserRecipeBook() {
   const [book, setBook] = useState(null);
+
   useEffect(function () {
-    async function getBook() {
-      const book = await booksAPI.getBook();
-      setBook(book);
+    async function getBoo() {
+      try {
+        const boo = await booksAPI.getBook();
+        console.log(boo);
+        setBook(boo);
+        console.log('Retrieved boo:', boo);
+      } catch (e) {
+        console.error('Error fetching book:', e);
+      }
     }
-    getBook();
-    console.log(book);
+    getBoo();
+    console.log('Retrieved book:', book);
   }, []);
-  return <div>UserRecipeBook</div>;
+
+  return (
+    <div>
+      UserRecipeBook
+      {book ? <div>{book.pages[0].items[0].label}</div> : <div></div>}
+    </div>
+  );
 }

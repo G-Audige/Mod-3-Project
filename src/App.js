@@ -13,7 +13,7 @@ import { getUser } from './utilities/users-service';
 
 function App() {
   const [search, setSearch] = useState('');
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(null);
   const [recipes, setRecipes] = useState('');
   const [user, setUser] = useState(getUser());
   const [recipeID, setRecipeID] = useState('');
