@@ -1,0 +1,31 @@
+#form {
+  /* position: absolute; */
+  border: 1px solid gray;
+  border-radius: 5px;
+  position: relative;
+  margin: auto;
+  width: 90%;
+  height: 30px;
+  margin-bottom: 10px;
+  padding: 0px 0px 0px 0nppx;
+}
+#form input {
+  border: transparent;
+  outline: none;
+  width: 89%;
+  position: absolute;
+  left: 0%;
+  top: 15%;
+  bottom: 0%;
+  font-size: 16px;
+}
+#form button {
+  border-left: 1px solid gray;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+  height: 32px;
+  width: 10%;
+  position: absolute;
+  right: 0%;
+  top: 0%;
+}

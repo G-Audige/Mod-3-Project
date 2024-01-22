@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function DropdownMenu() {
   return (
     <div className='dropdown-menu'>
-      <ul>
+      <ul className='dropdown-ul'>
         <li>
           <Link to='/search/ingredients'>Ingredient Search</Link>
         </li>

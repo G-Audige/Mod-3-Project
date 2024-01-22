@@ -44,7 +44,7 @@ export default function IngredientSearchPage() {
   };
   return (
     <div>
-      IngredientSearchPage
+      <h1>Nutrition Search</h1>
       <NutritionForm setSearch={setSearch} />
       {search ? (
         <div>

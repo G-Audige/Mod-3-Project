@@ -24,7 +24,7 @@ export default function SearchResults() {
     if (recipes) {
       let data = recipes.hits;
       return (
-        <div className='display'>
+        <div className='search-results'>
           <div className='recipes'>
             {data.map((rec, i) => {
               return (
@@ -36,13 +36,15 @@ export default function SearchResults() {
               );
             })}
           </div>
-          {index ? (
-            <div className='selected-recipe'>
-              <RecipeInfo recipe={data[index]} recipeID={recipeID} />
-            </div>
-          ) : (
-            <div style={{ display: 'none' }}></div>
-          )}
+          <div className='recipe-info'>
+            {index ? (
+              <div className='selected-recipe'>
+                <RecipeInfo recipe={data[index]} recipeID={recipeID} />
+              </div>
+            ) : (
+              <div style={{ display: 'none' }}></div>
+            )}
+          </div>
         </div>
       );
     } else {
@@ -50,7 +52,7 @@ export default function SearchResults() {
     }
   };
   const loading = () => {
-    return <div>Loading...</div>;
+    return <div className='loading'>Loading...</div>;
   };
   return search ? loaded() : loading();
 }

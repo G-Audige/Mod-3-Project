@@ -14,20 +14,20 @@
   border: 0.1vmin solid var(--tan-3);
   border-radius: 1vmin;
 }
-form {
+.form-container form {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 1.25vmin;
   color: var(--text-light);
 }
 
-label {
+.form-container label {
   font-size: 2vmin;
   display: flex;
   align-items: center;
 }
 
-input {
+.form-container input {
   padding: 1vmin;
   font-size: 2vmin;
   border: 0.1vmin solid var(--tan-3);
@@ -36,10 +36,10 @@ input {
   background-image: none !important; /* prevent lastpass */
   outline: none;
 }
-input:focus {
+.form-container input:focus {
   border-color: var(--blue);
 }
-button,
+.form-container button,
 a.button {
   margin: 1vmin;
   padding: 1vmin;
@@ -55,23 +55,23 @@ a.button {
   cursor: pointer;
 }
 
-button.btn-sm {
+.form-container button.btn-sm {
   font-size: 1.5vmin;
   padding: 0.6vmin 0.8vmin;
 }
 
-button.btn-xs {
+.form-container button.btn-xs {
   font-size: 1vmin;
   padding: 0.4vmin 0.5vmin;
 }
 
-button:disabled,
+.form-container button:disabled,
 form:invalid button[type='submit'] {
   cursor: not-allowed;
   background-color: var(--tan-4);
 }
 
-button[type='submit'] {
+.form-container button[type='submit'] {
   grid-column: span 2;
   margin: 1vmin 0 0;
 }

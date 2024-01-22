@@ -1,11 +1,11 @@
 .recipes {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: left;
 }
 .recipe {
   border: solid gray;
-  margin: 5px;
+  margin: 8px;
   width: 150px;
 }
 .recipe img {
@@ -16,4 +16,10 @@ ul {
 }
 .selected-recipe {
   text-align: left;
+  width: 330px;
+}
+.search-results {
+  display: flex;
+  overflow-x: scroll;
+  height: 500px;
 }

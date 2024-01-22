@@ -1,4 +1,6 @@
 import React from 'react';
+import './NutritionForm.css';
+import { IoSearch } from 'react-icons/io5';
 // Hooks
 import { useState } from 'react';
 
@@ -25,13 +27,13 @@ export default function NutritionForm({ setSearch }) {
           autoComplete='on'
           name='searchterm'
           onChange={handleChange}
-          placeholder='Search by name...'
+          placeholder='Search by name and unit amount...'
           type='text'
           value={formData.searchterm}
           className='searchbar'
         />
         <button type='submit' className='searchButton'>
-          Search
+          <IoSearch />
         </button>
       </form>
     </div>

@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import DropdownMenu from './DropdownMenu';
+import { FaRegUserCircle } from 'react-icons/fa';
 
 function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState(false);
@@ -26,7 +27,9 @@ function Navbar() {
         {activeDropdown && <DropdownMenu />}
       </div>
 
-      <Link to='/'>Main</Link>
+      <Link to='/'>
+        <img src='CookbookLogo.png' />
+      </Link>
       <Link to='/user'>User Page</Link>
     </div>
   );

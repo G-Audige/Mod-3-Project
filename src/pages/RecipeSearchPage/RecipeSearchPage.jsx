@@ -47,13 +47,11 @@ export default function RecipeSearchPage() {
   };
   return (
     <div className='recipe-search-page'>
-      RecipeSearchPage
+      <h1>Recipe Search</h1>
       <RecipeForm getRecipe={getRecipes} setSearch={setSearch} />
       {search ? (
         <div>
-          <SearchButtons position={position.top} />
           <SearchResults items={recipes} />
-          <SearchButtons position={position.bottom} />
         </div>
       ) : (
         <div></div>
