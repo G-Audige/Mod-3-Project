@@ -12,8 +12,8 @@ import { useContext, useState } from 'react';
 // const key = process.env.REACT_APP_EDAMAM_API_KEY;
 
 export default function SearchResults() {
-  const { recipes } = useContext(APIContext);
   const [recipeID, setRecipeID] = useState('');
+  const { recipes } = useContext(APIContext);
   const { search, index, setIndex } = useContext(SearchContext);
   const handleClick = (i) => {
     setIndex(i);

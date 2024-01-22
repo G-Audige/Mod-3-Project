@@ -2,7 +2,7 @@ import React from 'react';
 // Hooks
 import { useState } from 'react';
 
-function RecipeForm({ setSearch }) {
+export default function NutritionForm({ setSearch }) {
   const [formData, setFormData] = useState({
     searchterm: '',
   });
@@ -37,5 +37,3 @@ function RecipeForm({ setSearch }) {
     </div>
   );
 }
-
-export default RecipeForm;

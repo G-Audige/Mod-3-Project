@@ -20,11 +20,8 @@ export default function RecipeInfo({ recipe, recipeID }) {
   const submitRecipe = async () => {
     // preventDefault();
     try {
-      // console.log('Submit data');
-      // console.log(recipeData);
-      // console.log(recipeID);
+      // eslint-disable-next-line
       const recipeInfo = await booksAPI.addRecipeToBook(recipeData);
-      // console.log(recipeInfo);
     } catch (e) {
       console.log('Error');
     }
@@ -32,14 +29,12 @@ export default function RecipeInfo({ recipe, recipeID }) {
   const submitIngredients = async () => {
     try {
       recipe.recipe.ingredientLines.map(async (item) => {
+        // eslint-disable-next-line
         const ingredientsInfo = await listsAPI.addItemToList({
           name: item,
           recipe: recipe.recipe.label,
         });
-        // console.log(ingredientsInfo);
       });
-
-      // console.log(ingredientsInfo);
     } catch (e) {
       console.log('Error');
     }
