@@ -23,8 +23,8 @@ const bookSchema = new Schema(
 );
 
 bookSchema.statics.getBook = function (userId) {
-  console.log('Get book');
-  console.log('User ID:', userId);
+  // console.log('Get book');
+  // console.log('User ID:', userId);
   const book = this;
   return book.findOneAndUpdate(
     { user: userId },
@@ -38,10 +38,11 @@ bookSchema.methods.addRecipeToBook = function (recipeData) {
   book.pages.push({ items: recipeData });
   return book.save();
 };
-bookSchema.methods.removeRecipeFromBook = async function (recipeId) {
+bookSchema.methods.removeRecipeFromBook = async function (pageId) {
   const book = this;
-  console.log('Recipe Id', recipeId);
-  book.pages.items.findOneAndDelete({ recipeId: recipeId });
+  console.log(book.pages[1]._id);
+  console.log('Page Id', pageId);
+  book.pages.findOneAndDelete({ _id: pageId });
   return book.save();
 };
 
