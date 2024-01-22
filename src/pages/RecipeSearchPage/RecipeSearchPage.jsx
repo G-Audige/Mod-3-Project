@@ -41,10 +41,6 @@ export default function RecipeSearchPage() {
     // eslint-disable-next-line
   }, [search]);
 
-  const position = {
-    top: 0,
-    bottom: 1,
-  };
   return (
     <div className='recipe-search-page'>
       <h1>Recipe Search</h1>

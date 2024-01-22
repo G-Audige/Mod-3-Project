@@ -38,19 +38,13 @@ export default function IngredientSearchPage() {
     }
     // eslint-disable-next-line
   }, [search]);
-  const position = {
-    top: 0,
-    bottom: 1,
-  };
   return (
     <div>
       <h1>Nutrition Search</h1>
       <NutritionForm setSearch={setSearch} />
       {search ? (
         <div>
-          <SearchButtons position={position.top} />
           <NutritionResults food={food} search={search} />
-          <SearchButtons position={position.bottom} />
         </div>
       ) : (
         <div></div>

@@ -1,0 +1,4 @@
+.facts {
+  display: flex;
+  justify-content: space-evenly;
+}
