@@ -18,6 +18,7 @@ export default function UserRecipeBook() {
     }
     getBoo();
     console.log('Retrieved book:', book);
+    // eslint-disable-next-line
   }, []);
 
   return (

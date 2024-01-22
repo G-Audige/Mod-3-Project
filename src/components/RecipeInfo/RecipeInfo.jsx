@@ -1,11 +1,12 @@
 import React from 'react';
 import * as booksAPI from '../../utilities/books-api';
+import * as listsAPI from '../../utilities/shoppingLists-api';
 // Contexts
 import { SearchContext } from '../../contexts/SearchContexts';
 import { useContext } from 'react';
 
 export default function RecipeInfo({ recipe, recipeID }) {
-  const { index, setIndex } = useContext(SearchContext);
+  const { setIndex } = useContext(SearchContext);
   let recipeData = {
     label: recipe.recipe.label,
     calories: recipe.recipe.calories,
@@ -28,6 +29,21 @@ export default function RecipeInfo({ recipe, recipeID }) {
       console.log('Error');
     }
   };
+  const submitIngredients = async () => {
+    try {
+      recipe.recipe.ingredientLines.map(async (item) => {
+        const ingredientsInfo = await listsAPI.addItemToList({
+          name: item,
+          recipe: recipe.recipe.label,
+        });
+        console.log(ingredientsInfo);
+      });
+
+      // console.log(ingredientsInfo);
+    } catch (e) {
+      console.log('Error');
+    }
+  };
   const closeView = () => {
     setIndex(null);
   };
@@ -46,6 +62,9 @@ export default function RecipeInfo({ recipe, recipeID }) {
       </div>
       <a href={recipe.recipe.url}>Link to recipe</a>
       <button onClick={() => submitRecipe()}>Add to Recipe Book</button>
+      <button onClick={() => submitIngredients()}>
+        Add ingredients to shopping list
+      </button>
     </div>
   );
 }

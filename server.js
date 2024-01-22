@@ -20,11 +20,7 @@ app.use(require('./config/checkToken'));
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/books', ensureLoggedIn, require('./routes/api/books'));
 app.use('/api/recipes', ensureLoggedIn, require('./routes/api/recipes'));
-app.use(
-  '/api/ingredients',
-  ensureLoggedIn,
-  require('./routes/api/ingredients')
-);
+app.use('/api/lists', ensureLoggedIn, require('./routes/api/shoppingLists'));
 app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });

@@ -33,7 +33,7 @@ bookSchema.statics.getBook = function (userId) {
   );
 };
 bookSchema.methods.addRecipeToBook = function (recipeData) {
-  console.log('Add recipe to book model');
+  // console.log('Add recipe to book model');
   // console.log(recipeData.recipeId);
   const book = this;
   // console.log(book);
@@ -44,10 +44,10 @@ bookSchema.methods.addRecipeToBook = function (recipeData) {
   // });
   // console.log(page);
   // if (!page) {
-  console.log('Adding recipe to book');
+  // console.log('Adding recipe to book');
   // console.log(recipeData);
   const recipe = mongoose.model('Recipe', recipeSchema)(recipeData);
-  console.log(recipe);
+  // console.log(recipe);
   book.pages.push({ items: recipeData });
   // } else {
   //   console.log('This recipe is already in the book.');
@@ -56,7 +56,7 @@ bookSchema.methods.addRecipeToBook = function (recipeData) {
 };
 bookSchema.methods.removeRecipeFromBook = async function (recipeId) {
   const book = this;
-  book.pages.findOneAndRemove({ recipeId: recipeId });
+  book.pages.findOneAndDelete({ recipeId: recipeId });
   return book.save();
 };
 
