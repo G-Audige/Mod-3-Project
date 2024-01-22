@@ -4,10 +4,14 @@ import UserShoppingList from '../../components/UserShoppingList/UserShoppingList
 
 export default function UserShoppingListPage() {
   return (
-    <div>
-      <h1>User Shopping List Page</h1>
-      <UserNav />
-      <UserShoppingList />
+    <div className='user-account-page'>
+      <div>
+        <UserNav />
+      </div>
+      <div className='user-info'>
+        <h1>User Shopping List Page</h1>
+        <UserShoppingList />
+      </div>
     </div>
   );
 }

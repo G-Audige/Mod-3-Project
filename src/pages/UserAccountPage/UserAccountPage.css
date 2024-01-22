@@ -1,0 +1,25 @@
+.user-account-page {
+  display: flex;
+}
+.user-nav {
+  width: 200px;
+  height: 300px;
+  border: solid gray;
+}
+.user-info {
+  border: solid gray;
+  width: 100%;
+}
+.user-nav div {
+  width: 100%;
+  padding: 10px 0px 10px 0px;
+  transition: all linear 0.3s;
+}
+.user-nav div:hover {
+  background: gray;
+  cursor: pointer;
+  color: #fff;
+}
+.user-nav a {
+  width: 100%;
+}

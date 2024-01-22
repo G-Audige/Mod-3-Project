@@ -11,8 +11,10 @@ export default function NutritionResults({ food, search }) {
     if (food) {
       return (
         <div className='nutrition-results'>
-          {search}
-          <p>Calories: {food.calories}</p>
+          <h2>{search}</h2>
+          <p>
+            <strong>Calories:</strong> {food.calories}
+          </p>
           <div>
             <h3>Cautions</h3>
             {food.cautions.length === 0 ? <p>None</p> : loadCautions()}
@@ -20,15 +22,19 @@ export default function NutritionResults({ food, search }) {
           <div className='facts'>
             <div>
               <h3>Diet Labels</h3>
-              {food.dietLabels.map((label) => {
-                return <div>{label}</div>;
-              })}
+              <ul>
+                {food.dietLabels.map((label) => {
+                  return <li>{label}</li>;
+                })}
+              </ul>
             </div>
             <div>
               <h3>Health Labels</h3>
-              {food.healthLabels.map((label) => {
-                return <div>{label}</div>;
-              })}
+              <ul>
+                {food.healthLabels.map((label) => {
+                  return <li>{label}</li>;
+                })}
+              </ul>
             </div>
             <div>
               <h3>Daily Value</h3>

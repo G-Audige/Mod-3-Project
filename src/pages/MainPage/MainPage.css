@@ -1,0 +1,22 @@
+.main-page {
+  background-image: url('https://img.freepik.com/free-photo/tomatoes-tomatoes-lemon-leaves-garlic-bottle-oil-tree-branches_140725-74118.jpg?w=996&t=st=1705946533~exp=1705947133~hmac=e1f50b8b6d57d6f34f7e8af1d82761697a58bd1342f11457d25579c8ab5c2219');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+.main-page p {
+  background-color: beige;
+  margin: auto;
+  padding: 10px;
+  position: absolute;
+  height: fit-content;
+  width: fit-content;
+  min-width: 300px;
+  max-width: 600px;
+  top: 0%;
+  left: 0%;
+  bottom: 60%;
+  right: 0%;
+}

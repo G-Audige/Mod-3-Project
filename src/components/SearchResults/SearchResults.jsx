@@ -31,7 +31,6 @@ export default function SearchResults() {
                 <div className='recipe' key={i} onClick={() => handleClick(i)}>
                   <img src={rec.recipe.image} alt={rec.recipe.label} />
                   <p>{rec.recipe.label}</p>
-                  <p>{i + 1}</p>
                 </div>
               );
             })}

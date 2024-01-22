@@ -6,7 +6,7 @@ import { UserContext } from '../../contexts/UserContext';
 import { useContext } from 'react';
 
 export default function UserLogOut() {
-  const { user, setUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
   function handleLogOut() {
     logOut();
     setUser(null);
@@ -14,8 +14,6 @@ export default function UserLogOut() {
 
   return (
     <div className={styles.UserLogOut}>
-      <div>{user.name}</div>
-      <div className={styles.email}>{user.email}</div>
       <button className='btn-sm' onClick={handleLogOut}>
         LOG OUT
       </button>

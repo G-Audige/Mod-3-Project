@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 export default function UserRecipeBook() {
   const [book, setBook] = useState(null);
+  const [index, setIndex] = useState(0);
 
   useEffect(function () {
     async function getBoo() {
@@ -18,14 +19,36 @@ export default function UserRecipeBook() {
     getBoo();
     // eslint-disable-next-line
   }, []);
+  const deleteRecipe = async () => {
+    try {
+      // eslint-disable-next-line
+      const deleteRecipe = await booksAPI.deleteRecipeFromBook(
+        book.pages[0].items[index]
+      );
+    } catch (e) {
+      console.log('Error');
+    }
+  };
 
   return (
     <div>
-      UserRecipeBook
-      {book?.pages[0]?.items[0]?.label ? (
-        <div>{book.pages[0].items[0].label}</div>
+      You have {book?.pages.length} recipes in your book.
+      {book?.pages[0]?.items[index]?.label ? (
+        <div>
+          <h3>{book.pages[0].items[index].label}</h3>
+          <img
+            src={book.pages[0].items[index].image}
+            alt={book.pages[0].items[index].label}
+          />
+          <br />
+          <button onClick={() => deleteRecipe()}>Delete Recipe</button>
+        </div>
       ) : (
-        <div></div>
+        <div>
+          <p>
+            How about you look in the recipe search to add recipes to your book?
+          </p>
+        </div>
       )}
     </div>
   );

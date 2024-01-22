@@ -2,7 +2,6 @@ import React from 'react';
 // Components
 import NutritionForm from '../../components/NutritionForm/NutritionForm';
 import NutritionResults from '../../components/NutritionResults/NutritionResults';
-import SearchButtons from '../../components/SearchButtons/SearchButtons';
 // Contexts
 // Hooks
 import { useEffect, useState } from 'react';

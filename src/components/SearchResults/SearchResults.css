@@ -2,11 +2,15 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
+  overflow-x: scroll;
+  border: solid burlywood;
+  height: 70vh;
 }
 .recipe {
   border: solid gray;
   margin: 8px;
   width: 150px;
+  height: 250px;
 }
 .recipe img {
   width: 150px;
@@ -20,6 +24,6 @@ ul {
 }
 .search-results {
   display: flex;
-  overflow-x: scroll;
+
   height: 500px;
 }

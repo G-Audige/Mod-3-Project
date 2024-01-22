@@ -3,7 +3,6 @@ import React from 'react';
 // Components
 import RecipeForm from '../../components/RecipeForm/RecipeForm';
 import SearchResults from '../../components/SearchResults/SearchResults';
-import SearchButtons from '../../components/SearchButtons/SearchButtons';
 // Contexts
 import { APIContext } from '../../contexts/APIContext';
 import { SearchContext } from '../../contexts/SearchContexts';

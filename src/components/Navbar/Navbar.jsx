@@ -4,8 +4,13 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import DropdownMenu from './DropdownMenu';
 import { FaRegUserCircle } from 'react-icons/fa';
+// Contexts
+import { UserContext } from '../../contexts/UserContext';
+// Hooks
+import { useContext } from 'react';
 
 function Navbar() {
+  const { user } = useContext(UserContext);
   const [activeDropdown, setActiveDropdown] = useState(false);
   const handleMouseEnter = () => {
     setActiveDropdown(true);
@@ -14,7 +19,6 @@ function Navbar() {
   const handleMouseLeave = () => {
     setActiveDropdown(false);
   };
-  const dropdown = () => {};
   return (
     <div className='navbar'>
       <div
@@ -23,14 +27,13 @@ function Navbar() {
         onMouseLeave={handleMouseLeave}
       >
         <button>Menu</button>
-        {/* <DropdownMenu /> */}
         {activeDropdown && <DropdownMenu />}
       </div>
 
       <Link to='/'>
-        <img src='CookbookLogo.png' />
+        <img src='CookbookLogo.png' alt='Cookbook' />
       </Link>
-      <Link to='/user'>User Page</Link>
+      <Link to='/user'>{user ? <p>User Page</p> : <p>Login</p>}</Link>
     </div>
   );
 }

@@ -5,13 +5,17 @@ import { Link } from 'react-router-dom';
 
 export default function UserNav() {
   return (
-    <div>
-      <div>
+    <div className='user-nav'>
+      <div className='nav'>
         <Link to='/user'>User Info</Link>
-        <Link to='/user/book'>Recipe Book</Link>
-        <Link to='/user/shoppinglist'>Shopping List</Link>
-        <UserLogOut />
       </div>
+      <div className='nav'>
+        <Link to='/user/book'>Recipe Book</Link>
+      </div>
+      <div className='nav'>
+        <Link to='/user/shoppinglist'>Shopping List</Link>
+      </div>
+      <UserLogOut />
     </div>
   );
 }

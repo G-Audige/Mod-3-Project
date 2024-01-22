@@ -1,12 +1,12 @@
 .navbar {
-  background-color: greenyellow;
+  background-color: rgb(119, 92, 57);
   display: flex;
   justify-content: space-between;
   padding: 10px;
   height: 40px;
   position: relative;
   align-items: center;
-  z-index: 1;
+  z-index: 2;
 }
 .dropdown button {
   background: #000;

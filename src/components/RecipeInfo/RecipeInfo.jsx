@@ -1,4 +1,5 @@
 import React from 'react';
+import './RecipeInfo.css';
 import * as booksAPI from '../../utilities/books-api';
 import * as listsAPI from '../../utilities/shoppingLists-api';
 // Contexts
@@ -18,7 +19,6 @@ export default function RecipeInfo({ recipe, recipeID }) {
     dishType: recipe.recipe.dishType,
   };
   const submitRecipe = async () => {
-    // preventDefault();
     try {
       // eslint-disable-next-line
       const recipeInfo = await booksAPI.addRecipeToBook(recipeData);
@@ -43,9 +43,10 @@ export default function RecipeInfo({ recipe, recipeID }) {
     setIndex(null);
   };
   return (
-    <div>
+    <div className='recipe-info'>
       <h2>{recipe.recipe.label}</h2>
       <button onClick={() => closeView()}>X</button>
+      <br />
       <img src={recipe.recipe.image} alt={recipe.recipe.label} />
       <p>Calories: {Math.round(recipe.recipe.calories)}</p>
       <div className='ingredients'>
@@ -56,7 +57,9 @@ export default function RecipeInfo({ recipe, recipeID }) {
         </ul>
       </div>
       <a href={recipe.recipe.url}>Link to recipe</a>
+      <br />
       <button onClick={() => submitRecipe()}>Add to Recipe Book</button>
+      <br />
       <button onClick={() => submitIngredients()}>
         Add ingredients to shopping list
       </button>
