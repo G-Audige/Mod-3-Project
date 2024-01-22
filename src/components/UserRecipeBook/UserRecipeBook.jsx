@@ -22,7 +22,7 @@ export default function UserRecipeBook() {
   return (
     <div>
       UserRecipeBook
-      {book && book.pages.items ? (
+      {book?.pages[0]?.items[0]?.label ? (
         <div>{book.pages[0].items[0].label}</div>
       ) : (
         <div></div>

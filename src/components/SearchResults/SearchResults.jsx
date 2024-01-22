@@ -7,9 +7,6 @@ import { APIContext } from '../../contexts/APIContext';
 import { SearchContext } from '../../contexts/SearchContexts';
 // Hooks
 import { useContext, useState } from 'react';
-// .env Variables
-// const id = process.env.REACT_APP_EDAMAM_APPLICATION_ID;
-// const key = process.env.REACT_APP_EDAMAM_API_KEY;
 
 export default function SearchResults() {
   const [recipeID, setRecipeID] = useState('');
@@ -22,25 +19,6 @@ export default function SearchResults() {
     // console.log('ID:', sections[1]);
     console.log(recipes.hits[i]);
   };
-  // const getDish = async (recID) => {
-  //   const url = `https://api.edamam.com/api/recipes/v2/${recID}?type=public&app_id=${id}&app_key=${key}`;
-  //   const options = {
-  //     methods: 'GET',
-  //     headers: {},
-  //   };
-  //   try {
-  //     const response = await fetch(url, options);
-  //     const result = await response.json();
-  //     setDish(result);
-  //     console.log('ID in fetch:', recID);
-  //     console.log('URI search:', result);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-  // useEffect(() => {
-  //   getDish(recipeID);
-  // }, [recipeID]);
 
   const loaded = () => {
     if (recipes) {

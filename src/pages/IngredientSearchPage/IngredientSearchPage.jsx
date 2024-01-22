@@ -7,6 +7,7 @@ import SearchButtons from '../../components/SearchButtons/SearchButtons';
 // Hooks
 import { useEffect, useState } from 'react';
 // .env Variables
+// eslint-disable-next-line
 const key = process.env.REACT_APP_EDAMAM_NUTRITION_API_KEY;
 
 export default function IngredientSearchPage() {
@@ -25,6 +26,7 @@ export default function IngredientSearchPage() {
       const response = await fetch(url, options);
       const result = await response.json();
       setFood(result);
+      console.log(search);
       console.log(result);
     } catch (error) {
       console.error(error);
@@ -32,9 +34,9 @@ export default function IngredientSearchPage() {
   };
   useEffect(() => {
     if (search) {
-      console.log(key);
       getFood(search);
     }
+    // eslint-disable-next-line
   }, [search]);
   const position = {
     top: 0,
@@ -47,7 +49,7 @@ export default function IngredientSearchPage() {
       {search ? (
         <div>
           <SearchButtons position={position.top} />
-          <NutritionResults food={food} />
+          <NutritionResults food={food} search={search} />
           <SearchButtons position={position.bottom} />
         </div>
       ) : (
