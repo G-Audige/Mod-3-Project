@@ -35,7 +35,7 @@ shoppingListSchema.methods.addItemToList = function (ingData) {
   const list = this;
   // console.log(ingData);
   const item = mongoose.model('Ingredient', ingredientSchema)(ingData);
-  console.log(item);
+  // console.log(item);
   list.ingredients.push(item);
   return list.save();
 };

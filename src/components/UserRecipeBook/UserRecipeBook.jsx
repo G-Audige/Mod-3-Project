@@ -9,7 +9,6 @@ export default function UserRecipeBook() {
     async function getBoo() {
       try {
         const boo = await booksAPI.getBook();
-        console.log(boo);
         setBook(boo);
         console.log('Retrieved boo:', boo);
       } catch (e) {
@@ -17,7 +16,6 @@ export default function UserRecipeBook() {
       }
     }
     getBoo();
-    console.log('Retrieved book:', book);
     // eslint-disable-next-line
   }, []);
 

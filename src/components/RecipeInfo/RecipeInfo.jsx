@@ -20,11 +20,11 @@ export default function RecipeInfo({ recipe, recipeID }) {
   const submitRecipe = async () => {
     // preventDefault();
     try {
-      console.log('Submit data');
-      console.log(recipeData);
-      console.log(recipeID);
+      // console.log('Submit data');
+      // console.log(recipeData);
+      // console.log(recipeID);
       const recipeInfo = await booksAPI.addRecipeToBook(recipeData);
-      console.log(recipeInfo);
+      // console.log(recipeInfo);
     } catch (e) {
       console.log('Error');
     }
@@ -36,7 +36,7 @@ export default function RecipeInfo({ recipe, recipeID }) {
           name: item,
           recipe: recipe.recipe.label,
         });
-        console.log(ingredientsInfo);
+        // console.log(ingredientsInfo);
       });
 
       // console.log(ingredientsInfo);

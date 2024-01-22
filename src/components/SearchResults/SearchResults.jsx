@@ -19,7 +19,7 @@ export default function SearchResults() {
     setIndex(i);
     const sections = recipes.hits[i].recipe.uri.split('_');
     setRecipeID(sections[1]);
-    console.log('ID:', sections[1]);
+    // console.log('ID:', sections[1]);
     console.log(recipes.hits[i]);
   };
   // const getDish = async (recID) => {

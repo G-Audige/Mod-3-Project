@@ -7,7 +7,7 @@ export function getList() {
 }
 
 export function addItemToList(itemData) {
-  console.log('ShoppingList-api', itemData);
+  // console.log('ShoppingList-api', itemData);
   return sendRequest(`${BASE_URL}/items`, 'POST', itemData);
 }
 
