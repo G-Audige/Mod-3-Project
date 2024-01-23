@@ -11,7 +11,7 @@ This app will make use of Mongodb, Express, React, and node in the JavaScript, H
 
 ### Getting Started
 
-Link to Trello Board --> trello.com/b/Rf%lrSP6/mod-3-project
+Link to Trello Board --> https://trello.com/b/Rf%lrSP6/mod-3-project
 This app is still a work in project and so will receive updates in the future.
 
 ### Unsolved Problems

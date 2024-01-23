@@ -5,7 +5,7 @@ export default function NutritionResults({ food, search }) {
   const loaded = () => {
     if (food) {
       return (
-        <div className='nutrition-results'>
+        <div className="nutrition-results">
           <h2>{search}</h2>
           <p>
             <strong>Calories:</strong> {food.calories}
@@ -24,11 +24,7 @@ export default function NutritionResults({ food, search }) {
                     console.log(label);
                     return (
                       <span>
-                        {label.findInde === food.caution.length ? (
-                          <>{label[0] + label.slice(1).toLowerCase()}</>
-                        ) : (
-                          <>{label[0] + label.slice(1).toLowerCase()}</>
-                        )}
+                        <>{label[0] + label.slice(1).toLowerCase()}</>
                       </span>
                     );
                   })}
@@ -36,7 +32,7 @@ export default function NutritionResults({ food, search }) {
               </div>
             )}
           </div>
-          <div className='facts'>
+          <div className="facts">
             <div>
               <h3>Diet Labels</h3>
               <ul>
@@ -85,7 +81,7 @@ export default function NutritionResults({ food, search }) {
     }
   };
   const loading = () => {
-    return <div className='nutrition-results'>Loading...</div>;
+    return <div className="nutrition-results">Loading...</div>;
   };
   return search ? loaded() : loading();
 }
