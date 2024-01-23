@@ -22,7 +22,7 @@
   cursor: pointer;
 }
 .user-nav div:hover {
-  background: gray;
+  background: burlywood;
   color: #fff;
 }
 .user-nav button {
