@@ -3,8 +3,7 @@
   flex-wrap: wrap;
   justify-content: left;
   overflow-x: scroll;
-  border: solid burlywood;
-  height: 70vh;
+  max-height: 90vh;
 }
 .recipe {
   border: solid gray;
@@ -24,6 +23,7 @@ ul {
 }
 .search-results {
   display: flex;
-
-  height: 500px;
+  background-color: white;
+  max-height: 90vh;
+  box-shadow: inset 0px 4px 20px -6px rgba(0, 0, 0, 0.75);
 }

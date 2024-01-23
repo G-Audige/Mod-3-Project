@@ -1,3 +1,25 @@
 .recipe-info {
-  margin: auto;
+  /* margin: auto; */
+}
+.recipe-info button {
+  background-color: burlywood;
+  border: solid transparent;
+  margin: 5px;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+}
+.recipe-info button:hover {
+  background-color: bisque;
+}
+.close-view {
+  text-align: right;
+}
+.recipe-info .recipe-link {
+  font-weight: 700;
+  color: blue;
+}
+.recipe-info .recipe-link:hover {
+  font-weight: 700;
+  color: red;
 }

@@ -21,7 +21,7 @@
 .buttons div {
   align-self: center;
 }
-.recipe-link {
+.recipe-book .recipe-link {
   background-color: rgb(119, 92, 57);
   width: 150px;
   text-align: center;
@@ -31,7 +31,7 @@
   padding: 5px;
   width: 100%;
 }
-.recipe-link:hover {
+.recipe-book .recipe-link:hover {
   background-color: burlywood;
   cursor: pointer;
 }

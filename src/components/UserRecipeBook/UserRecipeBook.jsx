@@ -33,7 +33,6 @@ export default function UserRecipeBook() {
       }
     },
   };
-
   return (
     <div>
       {book?.pages[index]?.items[0]?.label ? (

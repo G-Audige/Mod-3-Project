@@ -11,12 +11,30 @@ export default function NutritionResults({ food, search }) {
             <strong>Calories:</strong> {food.calories}
           </p>
           <div>
-            <h3>Cautions</h3>
-            {/* {food.cautions.length === 0 ? <p>None</p> : {}} */}
-            {food.cautions.map((label) => {
-              console.log(label);
-              return <p>{label[0] + label.slice(1).toLowerCase()}</p>;
-            })}
+            {food.cautions.length === 0 ? (
+              <p>
+                <strong>Cautions:</strong> None
+              </p>
+            ) : (
+              <div>
+                <p>
+                  {' '}
+                  <strong>Cautions: </strong>
+                  {food.cautions.map((label) => {
+                    console.log(label);
+                    return (
+                      <span>
+                        {label.findInde === food.caution.length ? (
+                          <>{label[0] + label.slice(1).toLowerCase()}</>
+                        ) : (
+                          <>{label[0] + label.slice(1).toLowerCase()}</>
+                        )}
+                      </span>
+                    );
+                  })}
+                </p>
+              </div>
+            )}
           </div>
           <div className='facts'>
             <div>

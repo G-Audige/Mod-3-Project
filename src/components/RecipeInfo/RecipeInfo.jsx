@@ -46,7 +46,9 @@ export default function RecipeInfo({ recipe, recipeID }) {
   return (
     <div className='recipe-info'>
       <h2>{recipe.recipe.label}</h2>
-      <button onClick={() => closeView()}>X</button>
+      <button onClick={() => closeView()} className='close-view'>
+        X
+      </button>
       <br />
       <img src={recipe.recipe.image} alt={recipe.recipe.label} />
       <p>Calories: {Math.round(recipe.recipe.calories)}</p>
@@ -57,7 +59,9 @@ export default function RecipeInfo({ recipe, recipeID }) {
           })}
         </ul>
       </div>
-      <a href={recipe.recipe.url}>Link to recipe</a>
+      <a href={recipe.recipe.url} className='recipe-link'>
+        Link to recipe
+      </a>
       <br />
       <button onClick={() => submitRecipe()}>Add to Recipe Book</button>
       <br />
