@@ -38,7 +38,6 @@ export default class SignUpForm extends Component {
 
     return (
       <>
-        <h1>SignUpForm</h1>
         <div className='form-container'>
           <form
             autoComplete='off'

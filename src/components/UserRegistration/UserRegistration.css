@@ -1,13 +1,3 @@
-:root {
-  --white: #ffffff;
-  --tan-1: #f6fbfb;
-  --tan-2: #dde3e7;
-  --tan-3: #d1dee2;
-  --tan-4: #aed1d3;
-  --blue: #007ff7;
-  --text-light: #968c84;
-  --text-dark: #615954;
-}
 .form-container {
   padding: 3vmin;
   background-color: var(--tan-1);

@@ -1,4 +1,43 @@
 .recipe-book-info {
   display: flex;
   text-align: left;
+  padding: 5px;
+  margin: auto;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  background-color: burlywood;
+  align-content: center;
+}
+.buttons button {
+  background-color: rgb(119, 92, 57);
+  color: white;
+  border: solid transparent;
+  padding: 5px;
+  width: 90px;
+  cursor: pointer;
+}
+.buttons div {
+  align-self: center;
+}
+.recipe-link {
+  background-color: rgb(119, 92, 57);
+  width: 150px;
+  text-align: center;
+}
+.recipe-link a {
+  color: white;
+  padding: 5px;
+  width: 100%;
+}
+.recipe-link:hover {
+  background-color: burlywood;
+  cursor: pointer;
+}
+.recipe-book-info-left {
+  padding: 0px;
+}
+.recipe-book h3 {
+  border-bottom: 0.5px solid burlywood;
 }

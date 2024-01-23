@@ -41,7 +41,7 @@ shoppingListSchema.methods.addItemToList = function (ingData) {
 };
 shoppingListSchema.methods.removeItemFromList = async function (id) {
   const list = this;
-  list.findOneAndRemove({ _id: id });
+  list.findbyIdAndRemove({ _id: id });
   return list.save();
 };
 

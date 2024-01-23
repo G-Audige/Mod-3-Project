@@ -19,4 +19,5 @@
   left: 0%;
   bottom: 60%;
   right: 0%;
+  box-shadow: inset 0px 4px 20px 0px rgba(0, 0, 0, 0.75);
 }

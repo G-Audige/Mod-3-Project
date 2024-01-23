@@ -27,7 +27,12 @@ export default function UserShoppingList() {
           {list.ingredients.map((ingr) => {
             return (
               <p>
-                {ingr.name} <input type='checkbox'></input>
+                {ingr.name}
+                {ingr.bought ? (
+                  <input type='checkbox' name='bought' defaultChecked />
+                ) : (
+                  <input type='checkbox' name='bought' />
+                )}
               </p>
             );
           })}
