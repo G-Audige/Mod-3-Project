@@ -64,9 +64,11 @@ export default function UserRecipeBook() {
                 <p>
                   <strong>Ingredients</strong>
                 </p>
-                {book.pages[index].items[0].ingredients.map((ingr) => {
-                  return <p>{ingr}</p>;
-                })}
+                <ul>
+                  {book.pages[index].items[0].ingredients.map((ingr) => {
+                    return <li>{ingr}</li>;
+                  })}
+                </ul>
               </div>
               <div className='recipe-link'>
                 <a href={book.pages[index].items[0].link}>
