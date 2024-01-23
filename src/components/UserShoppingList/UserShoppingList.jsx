@@ -38,7 +38,12 @@ export default function UserShoppingList() {
                 <p key={i}>
                   {ingr.name}
                   {ingr.bought ? (
-                    <input type='checkbox' name='bought' defaultChecked />
+                    <input
+                      type='checkbox'
+                      name='bought'
+                      onClick={() => changeCheck(ingr)}
+                      defaultChecked
+                    />
                   ) : (
                     <input
                       type='checkbox'
