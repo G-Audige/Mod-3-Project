@@ -10,6 +10,7 @@ const ingredientSchema = new Schema(
   },
   {
     timestamps: true,
+    toJSON: { virtuals: true },
   }
 );
 const shoppingListSchema = new Schema(
@@ -20,6 +21,7 @@ const shoppingListSchema = new Schema(
   },
   {
     timestamps: true,
+    toJSON: { virtuals: true },
   }
 );
 

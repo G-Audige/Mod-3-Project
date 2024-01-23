@@ -1,5 +1,6 @@
 .recipe-book-info {
   display: flex;
+  flex-wrap: wrap;
   text-align: left;
   padding: 5px;
   margin: auto;
@@ -41,12 +42,16 @@
 }
 .recipe-book-info-left {
   padding: 0px;
+  /* border: solid blue; */
 }
+/* .recipe-book-info-right {
+  border: solid red;
+} */
 .recipe-book h3 {
   border-bottom: 0.5px solid burlywood;
 }
-@media screen and (max-width: 900px) {
+/* @media screen and (max-width: 900px) {
   .recipe-book-info {
     display: block;
   }
-}
+} */

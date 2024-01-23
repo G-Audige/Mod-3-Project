@@ -8,6 +8,7 @@
 }
 .main-page p {
   background-color: beige;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: auto;
   padding: 10px;
   position: absolute;
@@ -15,7 +16,7 @@
   width: fit-content;
   min-width: 300px;
   max-width: 600px;
-  top: 0%;
+  top: 20%;
   left: 0%;
   bottom: 60%;
   right: 0%;

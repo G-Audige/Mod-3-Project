@@ -24,18 +24,20 @@ export default function UserShoppingList() {
       Let's check off that shopping list!
       {list?.ingredients[0]?.name ? (
         <div>
-          {list.ingredients.map((ingr) => {
-            return (
-              <p>
-                {ingr.name}
-                {ingr.bought ? (
-                  <input type='checkbox' name='bought' defaultChecked />
-                ) : (
-                  <input type='checkbox' name='bought' />
-                )}
-              </p>
-            );
-          })}
+          <ul>
+            {list.ingredients.map((ingr, i) => {
+              return (
+                <p key={i}>
+                  {ingr.name}
+                  {ingr.bought ? (
+                    <input type='checkbox' name='bought' defaultChecked />
+                  ) : (
+                    <input type='checkbox' name='bought' />
+                  )}
+                </p>
+              );
+            })}
+          </ul>
         </div>
       ) : (
         <div>

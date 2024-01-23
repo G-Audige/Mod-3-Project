@@ -38,11 +38,11 @@ bookSchema.methods.addRecipeToBook = function (recipeData) {
   book.pages.push({ items: recipeData });
   return book.save();
 };
-bookSchema.methods.removeRecipeFromBook = async function (pageId) {
+bookSchema.methods.removeRecipe = async function (pageId) {
   const book = this;
-  console.log(book.pages[1]._id);
+  console.log(book.pages[0].items[0]._id);
   console.log('Page Id', pageId);
-  book.pages.findOneAndUpdate({ _id: pageId });
+  book.pages.findOneAndDelete({ _id: pageId });
   return book.save();
 };
 

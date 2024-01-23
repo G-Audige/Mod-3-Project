@@ -31,7 +31,7 @@ async function removeRecipeFromBook(req, res) {
   try {
     console.log('Request: ', req.params);
     const book = await Recipe.getBook(req.user._id);
-    await book.removeRecipeFromBook(req.params);
+    await book.removeRecipe(req.params);
     res.status(200).json(book);
   } catch (e) {
     res.status(400).json({ msg: e.message });

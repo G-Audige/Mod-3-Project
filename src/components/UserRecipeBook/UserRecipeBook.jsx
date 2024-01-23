@@ -33,6 +33,19 @@ export default function UserRecipeBook() {
       }
     },
   };
+  // const deleteRecipe = async () => {
+  //   try {
+  //     // eslint-disable-next-line
+  //     const deleteRec = await booksAPI.deleteRecipeFromBook(
+  //       book.pages[index].items[0]._id
+  //     );
+  //   } catch (e) {
+  //     console.log('Error');
+  //   }
+  //   if (index === book.pages.length) {
+  //     setIndex((index) => index - 1);
+  //   }
+  // };
   return (
     <div>
       {book?.pages[index]?.items[0]?.label ? (
@@ -65,8 +78,8 @@ export default function UserRecipeBook() {
                   <strong>Ingredients</strong>
                 </p>
                 <ul>
-                  {book.pages[index].items[0].ingredients.map((ingr) => {
-                    return <li>{ingr}</li>;
+                  {book.pages[index].items[0].ingredients.map((ingr, i) => {
+                    return <li key={i}>{ingr}</li>;
                   })}
                 </ul>
               </div>
@@ -75,6 +88,9 @@ export default function UserRecipeBook() {
                   Link to recipe instructions
                 </a>
               </div>
+              {/* <div>
+                <button onClick={() => deleteRecipe()}>Delete Recipe</button>
+              </div> */}
             </div>
           </div>
         </div>

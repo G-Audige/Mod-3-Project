@@ -11,7 +11,7 @@ export default function UserAccountPage() {
         <UserNav />
       </div>
       <div className='user-info'>
-        <h1>User Account Page</h1>
+        <h1>User Page</h1>
         <UserInfo />
       </div>
     </div>
