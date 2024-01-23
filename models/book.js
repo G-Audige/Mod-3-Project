@@ -40,9 +40,13 @@ bookSchema.methods.addRecipeToBook = function (recipeData) {
 };
 bookSchema.methods.removeRecipe = async function (pageId) {
   const book = this;
+  const recipe = book.pages.items.find((rec) => {
+    rec._id.equals(pageId);
+  });
+  recipe.deleteOne();
   console.log(book.pages[0].items[0]._id);
   console.log('Page Id', pageId);
-  book.pages.findOneAndDelete({ _id: pageId });
+  // book.pages.findOneAndDelete({ _id: pageId });
   return book.save();
 };
 

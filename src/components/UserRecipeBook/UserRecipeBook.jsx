@@ -33,19 +33,19 @@ export default function UserRecipeBook() {
       }
     },
   };
-  // const deleteRecipe = async () => {
-  //   try {
-  //     // eslint-disable-next-line
-  //     const deleteRec = await booksAPI.deleteRecipeFromBook(
-  //       book.pages[index].items[0]._id
-  //     );
-  //   } catch (e) {
-  //     console.log('Error');
-  //   }
-  //   if (index === book.pages.length) {
-  //     setIndex((index) => index - 1);
-  //   }
-  // };
+  const deleteRecipe = async () => {
+    try {
+      // eslint-disable-next-line
+      const deleteRec = await booksAPI.deleteRecipeFromBook(
+        book.pages[index].items[0]._id
+      );
+    } catch (e) {
+      console.log('Error');
+    }
+    if (index === book.pages.length) {
+      setIndex((index) => index - 1);
+    }
+  };
   return (
     <div>
       {book?.pages[index]?.items[0]?.label ? (
@@ -88,14 +88,14 @@ export default function UserRecipeBook() {
                   Link to recipe instructions
                 </a>
               </div>
-              {/* <div>
+              <div>
                 <button onClick={() => deleteRecipe()}>Delete Recipe</button>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
       ) : (
-        <div>
+        <div className='nothing-to-see'>
           <p>
             How about you look in the{' '}
             <Link to='/search/recipes'>

@@ -21,9 +21,9 @@ export default function UserShoppingList() {
   }, []);
   return (
     <div>
-      Let's check off that shopping list!
       {list?.ingredients[0]?.name ? (
         <div>
+          Let's check off that shopping list!
           <ul>
             {list.ingredients.map((ingr, i) => {
               return (
@@ -40,8 +40,14 @@ export default function UserShoppingList() {
           </ul>
         </div>
       ) : (
-        <div>
-          <Link to='/search/ingredients'>Ingredient Search</Link>
+        <div className='nothing-to-see'>
+          <p>
+            Go find some some{' '}
+            <Link to='/search/recipe'>
+              <span>recipes</span>
+            </Link>{' '}
+            you may like.
+          </p>
         </div>
       )}
     </div>

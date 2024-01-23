@@ -50,6 +50,15 @@
 .recipe-book h3 {
   border-bottom: 0.5px solid burlywood;
 }
+span {
+  color: blue;
+}
+span:hover {
+  color: red;
+}
+.nothing-to-see p {
+  text-align: center;
+}
 /* @media screen and (max-width: 900px) {
   .recipe-book-info {
     display: block;
