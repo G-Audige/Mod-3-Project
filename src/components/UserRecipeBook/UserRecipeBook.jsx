@@ -33,19 +33,17 @@ export default function UserRecipeBook() {
       }
     },
   };
-  const deleteRecipe = async () => {
-    try {
-      // eslint-disable-next-line
-      const deleteRec = await booksAPI.deleteRecipeFromBook(
-        book.pages[index]._id
-      );
-    } catch (e) {
-      console.log('Error');
-    }
-    if (index === book.pages.length) {
-      setIndex((index) => index - 1);
-    }
-  };
+  // const deleteRecipe = async () => {
+  //   try {
+  //     // eslint-disable-next-line
+  //     const deleteRec = await booksAPI.deleteRecipeFromBook(book.pages[index]);
+  //   } catch (e) {
+  //     console.log('Error');
+  //   }
+  //   if (index === book.pages.length) {
+  //     setIndex((index) => index - 1);
+  //   }
+  // };
   return (
     <div>
       {book?.pages[index]?.label ? (
@@ -55,9 +53,9 @@ export default function UserRecipeBook() {
             <div>
               {index + 1} of {book?.pages.length}
             </div>
-
             <button onClick={() => shiftIndex.increment()}>Next</button>
           </div>
+
           <h3>{book.pages[index].label}</h3>
           <div className='recipe-book-info'>
             <div className='recipe-book-info-left'>
@@ -67,6 +65,16 @@ export default function UserRecipeBook() {
               />
             </div>
             <div className='recipe-book-info-right'>
+              <div className='clickers'>
+                <div className='recipe-link'>
+                  <a href={book.pages[index].link} target='_blank'>
+                    Recipe instructions
+                  </a>
+                </div>
+                {/* <div>
+                  <button onClick={() => deleteRecipe()}>Delete Recipe</button>
+                </div> */}
+              </div>
               <div>
                 <p>
                   <strong>Calories:</strong>{' '}
@@ -82,12 +90,6 @@ export default function UserRecipeBook() {
                     return <li key={i}>{ingr}</li>;
                   })}
                 </ul>
-              </div>
-              <div className='recipe-link'>
-                <a href={book.pages[index].link}>Recipe instructions</a>
-              </div>
-              <div>
-                <button onClick={() => deleteRecipe()}>Delete Recipe</button>
               </div>
             </div>
           </div>

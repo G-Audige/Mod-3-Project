@@ -55,6 +55,7 @@ shoppingListSchema.methods.setBought = async function (id) {
   } else if (ingr.bought === false) {
     ingr.bought = true;
   }
+  console.log(ingr);
   return list.save();
 };
 

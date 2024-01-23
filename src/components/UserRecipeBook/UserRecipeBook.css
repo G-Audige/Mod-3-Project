@@ -31,9 +31,6 @@
 .recipe-link a {
   color: white;
   padding: 15px;
-  width: 80px;
-}
-.recipe-link {
 }
 .recipe-book .recipe-link:hover {
   background-color: burlywood;
@@ -44,11 +41,7 @@
 }
 .recipe-book-info-left {
   padding: 0px;
-  /* border: solid blue; */
 }
-/* .recipe-book-info-right {
-  border: solid red;
-} */
 .recipe-book h3 {
   border-bottom: 0.5px solid burlywood;
 }

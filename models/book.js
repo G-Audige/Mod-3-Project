@@ -39,16 +39,16 @@ bookSchema.methods.addRecipeToBook = function (recipeData) {
   book.pages.push(recipe);
   return book.save();
 };
-bookSchema.methods.removeRecipe = async function (pageId) {
-  const book = this;
-  console.log(book.pages[0]._id);
-  const recipe = book.pages.find((rec) => rec.items._id.equals(pageId));
-  console.log(pageId);
-  // recipe.deleteOne();
-  // console.log(book.pages[0]._id);
-  // console.log('Page Id', pageId);
-  // book.pages.findOneAndDelete({ _id: pageId });
-  return book.save();
-};
+// bookSchema.methods.removeRecipe = async function (pageId) {
+//   const book = this;
+//   // console.log(book.pages[0]._id);
+//   // const recipe = book.pages.find((page) => page._id.equals(pageId));
+//   // console.log(recipe);
+//   // recipe.deleteOne();
+//   // console.log(book.pages[0]._id);
+//   // console.log('Page Id', pageId);
+//   book.pages.findOneAndDelete({ _id: pageId });
+//   return book.save();
+// };
 
 module.exports = mongoose.model('Book', bookSchema);

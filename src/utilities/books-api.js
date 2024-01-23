@@ -11,5 +11,5 @@ export function addRecipeToBook(recipeData) {
   return sendRequest(`${Base_URL}/recipes`, 'POST', recipeData);
 }
 export function deleteRecipeFromBook(recipeID) {
-  return sendRequest(`${Base_URL}/recipes/${recipeID}/delete`, 'DELETE');
+  return sendRequest(`${Base_URL}/recipes/${recipeID._id}/delete`, 'DELETE');
 }
