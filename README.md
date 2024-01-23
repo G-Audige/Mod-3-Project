@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Mod-3-Project (Recipe App)
 
 ### Introduction
 
