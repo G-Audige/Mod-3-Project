@@ -41,11 +41,11 @@ shoppingListSchema.methods.addItemToList = function (ingData) {
   list.ingredients.push(item);
   return list.save();
 };
-shoppingListSchema.methods.removeItemFromList = async function (id) {
-  const list = this;
-  list.findbyIdAndRemove({ _id: id });
-  return list.save();
-};
+// shoppingListSchema.methods.removeItemFromList = async function (id) {
+//   const list = this;
+//   list.findbyIdAndRemove({ _id: id });
+//   return list.save();
+// };
 shoppingListSchema.methods.setBought = async function (id) {
   const list = this;
   const ingr = list.ingredients.find((ingr) => ingr._id.equals(id._id));

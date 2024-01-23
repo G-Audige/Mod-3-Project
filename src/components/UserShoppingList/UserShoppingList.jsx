@@ -36,7 +36,6 @@ export default function UserShoppingList() {
             {list.ingredients.map((ingr, i) => {
               return (
                 <p key={i}>
-                  {ingr.name}
                   {ingr.bought ? (
                     <input
                       type='checkbox'
@@ -51,6 +50,7 @@ export default function UserShoppingList() {
                       onClick={() => changeCheck(ingr)}
                     />
                   )}
+                  {ingr.name}
                 </p>
               );
             })}
