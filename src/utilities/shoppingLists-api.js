@@ -14,6 +14,11 @@ export function addItemToList(itemData) {
 export function deleteItemFromList(itemID) {
   return sendRequest(`${BASE_URL}/items/${itemID}/delete`, 'DELETE');
 }
-export function changeBoughtState(itemID) {
-  return sendRequest(`${BASE_URL}/items/${itemID}/bought`, 'POST');
+export function changeBoughtState(itemData) {
+  console.log('0');
+  return sendRequest(
+    `${BASE_URL}/items/${itemData._id}/bought`,
+    'POST',
+    itemData
+  );
 }

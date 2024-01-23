@@ -48,13 +48,12 @@ shoppingListSchema.methods.removeItemFromList = async function (id) {
 };
 shoppingListSchema.methods.setBought = async function (id) {
   const list = this;
-  console.log(list.ingredients[0]);
-  const ingr = list.ingredients.find((ingr) => {
-    ingr._id.equals(id);
-  });
+  const ingr = list.ingredients.find((ingr) => ingr._id.equals(id._id));
   console.log(ingr);
-  if (ingr) {
-    ingr = !ingr;
+  if (ingr.bought === true) {
+    ingr.bought = false;
+  } else {
+    ingr.bought = true;
   }
   return list.save();
 };

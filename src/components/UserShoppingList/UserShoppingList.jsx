@@ -22,7 +22,7 @@ export default function UserShoppingList() {
     console.log('checked:', ingr);
     try {
       const lis = await listsAPI.changeBoughtState(ingr);
-      console.log('Changed check');
+      console.log('Changed check', lis);
     } catch (e) {
       console.log('Error');
     }
@@ -43,7 +43,7 @@ export default function UserShoppingList() {
                     <input
                       type='checkbox'
                       name='bought'
-                      onClick={() => changeCheck(ingr._id)}
+                      onClick={() => changeCheck(ingr)}
                     />
                   )}
                 </p>
