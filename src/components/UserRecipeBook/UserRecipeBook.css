@@ -3,6 +3,7 @@
   text-align: left;
   padding: 5px;
   margin: auto;
+  justify-content: space-evenly;
 }
 .buttons {
   display: flex;
@@ -35,9 +36,17 @@
   background-color: burlywood;
   cursor: pointer;
 }
+.recipe-book-info div {
+  width: 300px;
+}
 .recipe-book-info-left {
   padding: 0px;
 }
 .recipe-book h3 {
   border-bottom: 0.5px solid burlywood;
+}
+@media screen and (max-width: 900px) {
+  .recipe-book-info {
+    display: block;
+  }
 }

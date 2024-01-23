@@ -51,7 +51,9 @@ export default function RecipeInfo({ recipe, recipeID }) {
       </button>
       <br />
       <img src={recipe.recipe.image} alt={recipe.recipe.label} />
-      <p>Calories: {Math.round(recipe.recipe.calories)}</p>
+      <p>
+        <strong>Calories:</strong> {Math.round(recipe.recipe.calories)}
+      </p>
       <div className='ingredients'>
         <ul>
           {recipe.recipe.ingredientLines.map((ing, i) => {

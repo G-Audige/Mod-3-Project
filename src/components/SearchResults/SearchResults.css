@@ -3,7 +3,8 @@
   flex-wrap: wrap;
   justify-content: left;
   overflow-x: scroll;
-  max-height: 90vh;
+  max-height: 75vh;
+  box-shadow: inset 0px 4px 20px -6px rgba(0, 0, 0, 0.75);
 }
 .recipe {
   border: solid gray;
@@ -24,6 +25,5 @@ ul {
 .search-results {
   display: flex;
   background-color: white;
-  max-height: 90vh;
-  box-shadow: inset 0px 4px 20px -6px rgba(0, 0, 0, 0.75);
+  /* max-height: 90vh; */
 }

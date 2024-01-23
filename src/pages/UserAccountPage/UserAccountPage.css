@@ -22,3 +22,11 @@
 .user-nav a {
   width: 100%;
 }
+@media screen and (max-width: 600px) {
+  .user-account-page {
+    display: block;
+  }
+  .user-nav {
+    width: 100%;
+  }
+}

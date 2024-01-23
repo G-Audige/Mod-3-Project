@@ -9,7 +9,7 @@ export default function UserShoppingListPage() {
         <UserNav />
       </div>
       <div className='user-info'>
-        <h1>User Shopping List Page</h1>
+        <h1>Shopping List</h1>
         <UserShoppingList />
       </div>
     </div>

@@ -9,7 +9,7 @@ export default function UserRecipeBookPage() {
         <UserNav />
       </div>
       <div className='user-info'>
-        <h1>User Recipe Book Page</h1>
+        <h1>Recipe Book</h1>
         <UserRecipeBook />
       </div>
     </div>
