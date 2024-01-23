@@ -11,6 +11,7 @@
   margin: 8px;
   width: 150px;
   height: 250px;
+  overflow-y: hidden;
 }
 .recipe img {
   width: 150px;

@@ -85,12 +85,12 @@ export default function UserRecipeBook() {
               </div>
               <div className='recipe-link'>
                 <a href={book.pages[index].items[0].link}>
-                  Link to recipe instructions
+                  Recipe instructions
                 </a>
               </div>
-              <div>
+              {/* <div>
                 <button onClick={() => deleteRecipe()}>Delete Recipe</button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

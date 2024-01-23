@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 export default function UserShoppingList() {
   const [list, setList] = useState(null);
-
   useEffect(function () {
     async function getList() {
       try {
@@ -19,6 +18,15 @@ export default function UserShoppingList() {
     getList();
     // eslint-disable-next-line
   }, []);
+  const changeCheck = async (ingr) => {
+    console.log('checked:', ingr);
+    try {
+      const lis = await listsAPI.changeBoughtState(ingr);
+      console.log('Changed check');
+    } catch (e) {
+      console.log('Error');
+    }
+  };
   return (
     <div>
       {list?.ingredients[0]?.name ? (
@@ -32,7 +40,11 @@ export default function UserShoppingList() {
                   {ingr.bought ? (
                     <input type='checkbox' name='bought' defaultChecked />
                   ) : (
-                    <input type='checkbox' name='bought' />
+                    <input
+                      type='checkbox'
+                      name='bought'
+                      onClick={() => changeCheck(ingr._id)}
+                    />
                   )}
                 </p>
               );

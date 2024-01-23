@@ -30,8 +30,10 @@
 }
 .recipe-link a {
   color: white;
-  padding: 5px;
-  width: 100%;
+  padding: 15px;
+  width: 80px;
+}
+.recipe-link {
 }
 .recipe-book .recipe-link:hover {
   background-color: burlywood;

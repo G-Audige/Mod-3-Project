@@ -46,5 +46,17 @@ shoppingListSchema.methods.removeItemFromList = async function (id) {
   list.findbyIdAndRemove({ _id: id });
   return list.save();
 };
+shoppingListSchema.methods.setBought = async function (id) {
+  const list = this;
+  console.log(list.ingredients[0]);
+  const ingr = list.ingredients.find((ingr) => {
+    ingr._id.equals(id);
+  });
+  console.log(ingr);
+  if (ingr) {
+    ingr = !ingr;
+  }
+  return list.save();
+};
 
 module.exports = mongoose.model('ShoppingList', shoppingListSchema);
